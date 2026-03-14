@@ -12,6 +12,12 @@
   .bg-light {
     background-color: var(--aw-color-bg-page);
   }
+  .bg-card {
+    background-color: var(--aw-color-bg-card);
+  }
+  .bg-alt {
+    background-color: var(--aw-color-bg-alt);
+  }
   .text-page {
     color: var(--aw-color-text-page);
   }
