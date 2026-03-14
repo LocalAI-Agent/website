@@ -1,0 +1,163 @@
+---
+/**
+ * StructuredData Component
+ * 
+ * Adds JSON-LD structured data for better SEO and search engine understanding
+ * 
+ * Usage:
+ * <StructuredData type="organization" />
+ * <StructuredData type="article" article={post} />
+ * <StructuredData type="faq" faqs={faqData} />
+ */
+
+import { SITE } from 'astrowind:config';
+import { getAsset } from '~/utils/permalinks';
+
+export interface Props {
+  type?: 'organization' | 'website' | 'article' | 'blogPosting' | 'faq' | 'product' | 'service';
+  article?: {
+    title: string;
+    description: string;
+    image?: string;
+    datePublished: string;
+    dateModified?: string;
+    author: string;
+  };
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const { type = 'organization', article, faqs } = Astro.props;
+
+const siteUrl = SITE.site;
+const logoUrl = getAsset('/_astro/icon.webp');
+
+let structuredData = {};
+
+switch (type) {
+  case 'organization':
+    structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: SITE.name,
+      url: siteUrl,
+      logo: logoUrl,
+      description: SITE.metadata?.description,
+      sameAs: [
+        'https://twitter.com/localai67177',
+        'https://github.com/LocalAI-Agent',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'contact@localaiagent.tech',
+      },
+    };
+    break;
+
+  case 'website':
+    structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE.name,
+      url: siteUrl,
+      description: SITE.metadata?.description,
+      publisher: {
+        '@type': 'Organization',
+        name: SITE.name,
+        logo: logoUrl,
+      },
+    };
+    break;
+
+  case 'article':
+  case 'blogPosting':
+    if (article) {
+      structuredData = {
+        '@context': 'https://schema.org',
+        '@type': type === 'article' ? 'Article' : 'BlogPosting',
+        headline: article.title,
+        description: article.description,
+        image: article.image ? new URL(article.image, siteUrl).href : undefined,
+        datePublished: article.datePublished,
+        dateModified: article.dateModified || article.datePublished,
+        author: {
+          '@type': 'Person',
+          name: article.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: SITE.name,
+          logo: {
+            '@type': 'ImageObject',
+            url: logoUrl,
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': siteUrl,
+        },
+      };
+    }
+    break;
+
+  case 'faq':
+    if (faqs && faqs.length > 0) {
+      structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      };
+    }
+    break;
+
+  case 'product':
+    structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'LocalAI Agent',
+      description: SITE.metadata?.description,
+      brand: {
+        '@type': 'Organization',
+        name: SITE.name,
+        logo: logoUrl,
+      },
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/PreOrder',
+        priceCurrency: 'USD',
+        price: 'Contact for pricing',
+      },
+    };
+    break;
+
+  case 'service':
+    structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Enterprise AI Infrastructure',
+      provider: {
+        '@type': 'Organization',
+        name: SITE.name,
+        logo: logoUrl,
+      },
+      description: SITE.metadata?.description,
+      areaServed: {
+        '@type': 'Country',
+        name: 'Global',
+      },
+    };
+    break;
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

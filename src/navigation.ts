@@ -18,7 +18,24 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [],
+  links: [
+    {
+      text: 'Home',
+      href: getPermalink('/'),
+    },
+    {
+      text: 'About',
+      href: getPermalink('/about'),
+    },
+    {
+      text: 'Blog',
+      href: getBlogPermalink(),
+    },
+    {
+      text: 'Contact',
+      href: getPermalink('/contact'),
+    },
+  ],
   secondaryLinks: [
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
     { text: 'Terms of Service', href: getPermalink('/terms') },
@@ -26,13 +43,15 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/LocalAI-Agent' },
     { ariaLabel: 'Twitter', icon: 'tabler:brand-x', href: 'https://twitter.com/localai67177' },
-    { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#', class: 'opacity-50' },
-    { ariaLabel: 'Reddit', icon: 'tabler:brand-reddit', href: '#', class: 'opacity-50' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://linkedin.com/company/localai-agent' },
   ],
   footNote: `
     <div class="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
       <div class="text-sm">
         © ${new Date().getFullYear()} LocalAI Agent. All rights reserved.
+      </div>
+      <div class="text-sm text-muted">
+        Enterprise Local AI Infrastructure & AI Agents
       </div>
     </div>
   `,

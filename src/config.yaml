@@ -4,24 +4,37 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: false
+  googleSiteVerificationId: false # Add your Google Site Verification ID here
 
-# Default SEO metadata
+# Default SEO metadata - Optimized for search engines and social sharing
 metadata:
   title:
-    default: LocalAI Agent
-    template: '%s — LocalAI Agent'
-  description: "LocalAI Agent is building the next generation of enterprise AI infrastructure. We help organizations deploy AI models locally and run enterprise-grade AI agents directly on their own infrastructure."
+    default: LocalAI Agent - Enterprise Local AI Infrastructure & AI Agents
+    template: '%s | LocalAI Agent'
+  description: "LocalAI Agent helps enterprises deploy AI models locally and run enterprise-grade AI agents on their own infrastructure. Secure, private, low-latency AI solutions for businesses."
+  keywords:
+    - local AI
+    - enterprise AI
+    - AI agents
+    - local LLM deployment
+    - private AI infrastructure
+    - edge AI
+    - AI security
+    - self-hosted AI
+    - enterprise machine learning
+    - AI data privacy
   robots:
     index: true
     follow: true
   openGraph:
     site_name: LocalAI Agent
     images:
-      - url: '~/assets/images/icon.webp'
+      - url: '~/assets/images/local-ai-agent-edge-server-hardware.webp'
         width: 1200
-        height: 1200
+        height: 630
+        alt: LocalAI Agent - Enterprise AI Infrastructure
     type: website
+    locale: en_US
   twitter:
     handle: '@localai67177'
     site: '@localai67177'
@@ -41,24 +54,28 @@ apps:
       permalink: '/blog/%slug%'
       robots:
         index: true
+        follow: true
 
     list:
       isEnabled: true
       pathname: 'blog'
       robots:
         index: true
+        follow: true
 
     category:
       isEnabled: true
       pathname: 'category'
       robots:
         index: true
+        follow: true
 
     tag:
       isEnabled: true
       pathname: 'tag'
       robots:
         index: false
+        follow: true
 
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
@@ -66,7 +83,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null
+      id: null # Add your Google Analytics ID: G-XXXXXXXXXX
 
 ui:
   theme: 'system'

@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 // Import images
 import edgeServerImage from '~/assets/images/local-ai-agent-edge-server-hardware.webp';
@@ -13,9 +14,48 @@ import dataPrivacyImage from '~/assets/images/secure-local-ai-infrastructure-dat
 import latencyImage from '~/assets/images/low-latency-local-ai-vs-cloud-comparison.webp';
 
 const metadata = {
-  title: 'LocalAI Agent - Enterprise AI Solutions',
+  title: 'LocalAI Agent - Enterprise Local AI Infrastructure & AI Agents',
+  description: 'Deploy AI models locally and run enterprise-grade AI agents on your own infrastructure. Secure, private, low-latency AI solutions for businesses.',
+  openGraph: {
+    type: 'website',
+    images: [
+      {
+        url: '~/assets/images/local-ai-agent-edge-server-hardware.webp',
+        width: 1200,
+        height: 630,
+        alt: 'LocalAI Agent - Enterprise AI Infrastructure',
+      },
+    ],
+  },
+  twitter: {
+    cardType: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
+// FAQ data for structured data
+const faqs = [
+  {
+    question: 'What is LocalAI Agent?',
+    answer: 'LocalAI Agent is an enterprise solution that helps organizations deploy AI models locally and run enterprise-grade AI agents on their own infrastructure, ensuring data privacy, security, and low-latency inference.',
+  },
+  {
+    question: 'Why deploy AI models locally?',
+    answer: 'Local AI deployment provides complete data privacy, reduced latency, lower costs, and full control over your AI infrastructure. It eliminates dependency on cloud providers and keeps sensitive enterprise data within your organization.',
+  },
+  {
+    question: 'What AI models does LocalAI Agent support?',
+    answer: 'LocalAI Agent supports a wide range of open-source LLMs including Llama, Mistral, Falcon, and other transformer-based models. Our platform is model-agnostic and optimized for enterprise deployment.',
+  },
+];
 ---
+
+<StructuredData type="organization" />
+<StructuredData type="service" />
+<StructuredData type="faq" faqs={faqs} />
 
 <style is:global>
   @keyframes gradient {
