@@ -3,62 +3,74 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Page Background - Light Mode: Clean Neural Lab */
   .bg-page {
     background-color: var(--aw-color-bg-page);
-    background-image: 
+    background-image:
       var(--aw-glow-primary),
       var(--aw-glow-accent),
-      radial-gradient(circle at 1px 1px, rgba(1, 97, 239, 0.03) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--aw-grid-dot-light) 1px, transparent 0);
     background-repeat: no-repeat;
-    background-position: top center, top right, 0 0;
-    background-size: 100% 50%, 80% 60%, 4px 4px;
+    background-position: top center, 70% 0, 0 0;
+    background-size: 100% 60%, 70% 50%, 6px 6px;
   }
+  
+  /* Page Background - Dark Mode: Deep Neural Space */
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);
-    background-image: 
+    background-image:
       var(--aw-glow-primary-dark),
       var(--aw-glow-accent-dark),
-      radial-gradient(circle at 1px 1px, rgba(1, 97, 239, 0.06) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--aw-grid-dot-dark) 1px, transparent 0);
     background-repeat: no-repeat;
-    background-position: top center, top right, 0 0;
-    background-size: 100% 50%, 80% 60%, 4px 4px;
+    background-position: top center, 70% 0, 0 0;
+    background-size: 100% 60%, 70% 50%, 6px 6px;
   }
+  
   .bg-light {
     background-color: var(--aw-color-bg-page);
-    background-image: 
+    background-image:
       var(--aw-glow-primary),
       var(--aw-glow-accent),
-      radial-gradient(circle at 1px 1px, rgba(1, 97, 239, 0.03) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--aw-grid-dot-light) 1px, transparent 0);
     background-repeat: no-repeat;
-    background-position: top center, top right, 0 0;
-    background-size: 100% 50%, 80% 60%, 4px 4px;
+    background-position: top center, 70% 0, 0 0;
+    background-size: 100% 60%, 70% 50%, 6px 6px;
   }
+  
+  /* Card Background - matches page mode */
   .bg-card {
     background-color: var(--aw-color-bg-card);
   }
+  
   .bg-alt {
     background-color: var(--aw-color-bg-alt);
   }
+  
+  /* Gradient Page Background - Light */
   .bg-gradient-page {
-    background-image: 
+    background-image:
       linear-gradient(180deg, var(--aw-color-bg-gradient-start) 0%, var(--aw-color-bg-gradient-end) 100%),
       var(--aw-glow-primary),
       var(--aw-glow-accent),
-      radial-gradient(circle at 1px 1px, rgba(1, 97, 239, 0.03) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--aw-grid-dot-light) 1px, transparent 0);
     background-repeat: no-repeat;
-    background-position: center, top center, top right, 0 0;
-    background-size: 100% 100%, 100% 50%, 80% 60%, 4px 4px;
+    background-position: center, top center, 70% 0, 0 0;
+    background-size: 100% 100%, 100% 60%, 70% 50%, 6px 6px;
   }
+  
+  /* Gradient Page Background - Dark */
   .bg-gradient-page-dark {
-    background-image: 
+    background-image:
       linear-gradient(180deg, var(--aw-color-bg-gradient-start-dark) 0%, var(--aw-color-bg-gradient-end-dark) 100%),
       var(--aw-glow-primary-dark),
       var(--aw-glow-accent-dark),
-      radial-gradient(circle at 1px 1px, rgba(1, 97, 239, 0.06) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, var(--aw-grid-dot-dark) 1px, transparent 0);
     background-repeat: no-repeat;
-    background-position: center, top center, top right, 0 0;
-    background-size: 100% 100%, 100% 50%, 80% 60%, 4px 4px;
+    background-position: center, top center, 70% 0, 0 0;
+    background-size: 100% 100%, 100% 60%, 70% 50%, 6px 6px;
   }
+  
   .text-page {
     color: var(--aw-color-text-page);
   }
