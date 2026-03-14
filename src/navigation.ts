@@ -25,7 +25,7 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/LocalAI-Agent' },
-    { ariaLabel: 'Twitter', icon: 'tabler:brand-x', href: 'https://twitter.com/LocalAI-Agent' },
+    { ariaLabel: 'Twitter', icon: 'tabler:brand-x', href: 'https://twitter.com/localai67177' },
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: '#', class: 'opacity-50' },
     { ariaLabel: 'Reddit', icon: 'tabler:brand-reddit', href: '#', class: 'opacity-50' },
   ],
