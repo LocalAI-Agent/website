@@ -1,53 +1,111 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { Image } from 'astro:assets';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
+// Import images
+import edgeServerImage from '~/assets/images/local-ai-agent-edge-server-hardware.webp';
+import dataPrivacyImage from '~/assets/images/secure-local-ai-infrastructure-data-privacy.webp';
+import latencyImage from '~/assets/images/low-latency-local-ai-vs-cloud-comparison.webp';
 
 const metadata = {
   title: 'LocalAI Agent - Enterprise AI Solutions',
 };
 ---
 
+<style is:global>
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+</style>
+
 <Layout metadata={metadata}>
   <!-- Hero Section ******************* -->
 
-  <Hero
-    tagline="Currently building. Early access coming soon."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Join the Waitlist',
-        href: getPermalink('/contact'),
-      },
-      {
-        variant: 'secondary',
-        text: 'Follow Us',
-        href: 'https://github.com/LocalAI-Agent',
-        target: '_blank',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      LocalAI Agent
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Deploy local AI models and run enterprise-grade AI agents securely on your own infrastructure.
-    </Fragment>
-  </Hero>
+  <section class="relative py-20 md:py-32 bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Content -->
+        <div class="text-center lg:text-left">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-4">
+            Currently building. Early access coming soon.
+          </p>
+          <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
+            LocalAI Agent
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+            Deploy local AI models and run enterprise-grade AI agents securely on your own infrastructure.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a
+              href={getPermalink('/contact')}
+              class="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors"
+            >
+              Join the Waitlist
+            </a>
+            <a
+              href="https://github.com/LocalAI-Agent"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-primary bg-white border-2 border-primary hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-gray-700 transition-colors"
+            >
+              Follow Us
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right: Image -->
+        <div class="relative px-4">
+          <Image
+            src={edgeServerImage}
+            alt="A high-performance compact edge AI server with glowing blue LED indicators, designed for secure local deployment of large language models in enterprise environments."
+            class="rounded-lg shadow-2xl w-full h-auto"
+            widths={[400, 600, 800]}
+          />
+          <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+            LocalAI Agent — High-performance edge AI server for enterprise deployment
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Vision Section **************** -->
 
-  <section class="py-16 md:py-24 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative py-16 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 pointer-events-none">
+      <Image
+        src={dataPrivacyImage}
+        alt="A 3D isometric illustration of a digital fortress dome protecting local enterprise servers from external cloud data leaks, representing private and secure AI infrastructure."
+        class="w-full h-full object-cover opacity-40 dark:opacity-50"
+        widths={[800, 1200]}
+      />
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
           The Future of Enterprise AI is Local
         </h2>
-        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl">
           <p>
             Cloud AI is powerful, but enterprises need more control over their data and infrastructure.
           </p>
@@ -86,33 +144,84 @@ const metadata = {
 
   <!-- Why Local AI ****************** -->
 
-  <Features
-    title="Why Local AI?"
-    subtitle="Take control of your AI infrastructure and data"
-    columns={2}
-    items={[
-      {
-        title: 'Data Privacy & Security',
-        description: 'Keep sensitive enterprise data inside your organization.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Low Latency',
-        description: 'Immediate AI responses without cloud dependency.',
-        icon: 'tabler:bolt',
-      },
-      {
-        title: 'Full Infrastructure Control',
-        description: 'Customize your AI environment for your business.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'No Cloud Dependency',
-        description: 'Reduce costs and risks of cloud-based AI.',
-        icon: 'tabler:cloud-off',
-      },
-    ]}
-  />
+  <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Why Local AI?
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">
+            Take control of your AI infrastructure and data
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Benefits List -->
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Data Privacy & Security</h3>
+                <p class="text-gray-600 dark:text-gray-300">Keep sensitive enterprise data inside your organization.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Low Latency</h3>
+                <p class="text-gray-600 dark:text-gray-300">Immediate AI responses without cloud dependency.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">Full Infrastructure Control</h3>
+                <p class="text-gray-600 dark:text-gray-300">Customize your AI environment for your business.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2">No Cloud Dependency</h3>
+                <p class="text-gray-600 dark:text-gray-300">Reduce costs and risks of cloud-based AI.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right: Comparison Image -->
+          <div class="relative px-4">
+            <Image
+              src={latencyImage}
+              alt="A conceptual speed comparison diagram showing the ultra-low latency of local AI model inference versus the high-latency path of cloud-based AI processing."
+              class="rounded-lg shadow-xl w-full h-auto"
+              widths={[400, 600, 800]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Join the Waitlist Section ***** -->
 

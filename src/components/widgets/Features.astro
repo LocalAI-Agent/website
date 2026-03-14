@@ -17,6 +17,7 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
+  after = await Astro.slots.render('after'),
 } = Astro.props;
 ---
 
@@ -33,4 +34,5 @@ const {
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />
+  {after}
 </WidgetWrapper>
