@@ -2,7 +2,7 @@
 publishDate: 2026-03-15
 author: Jiahao
 title: "vLLM vs SGLang: Enterprise LLM Inference Comparison"
-excerpt: "Compare vLLM and SGLang for enterprise AI deployment and performance."
+excerpt: "Compare vLLM and SGLang for enterprise AI deployment."
 image: "~/assets/images/blog/vllm-vs-sglang.webp"
 category: AI Infrastructure
 keywords:

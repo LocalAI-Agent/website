@@ -2,7 +2,7 @@
 publishDate: 2026-03-15
 author: Jiahao
 title: "MCP vs Function Calling: AI Tool Integration Guide"
-excerpt: "Learn how MCP provides scalable, secure AI tool integration compared to traditional Function Calling."
+excerpt: "Learn how MCP provides scalable, secure AI tool integration."
 image: "~/assets/images/blog/mcp-vs-function-calling.webp"
 category: AI Engineering
 
