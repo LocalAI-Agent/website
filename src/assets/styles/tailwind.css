@@ -2,45 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Blog Typography CSS Custom Properties */
+:root {
+  /* Blog Text Colors - Light Mode */
+  --aw-color-text-primary: #1a202c;
+  --aw-color-text-secondary: #4a5568;
+  --aw-color-text-muted: #718096;
+  --aw-color-accent: #3b82f6;
+  --aw-color-border: #e2e8f0;
+  --aw-color-code-bg: #f7fafc;
+  
+  /* Blog Background Colors - Light Mode */
+  --aw-color-bg-page: #ffffff;
+  --aw-color-bg-card: #ffffff;
+  
+  /* Blog Font Families */
+  --aw-font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --aw-font-heading: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --aw-font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* Dark Mode Blog Colors */
+.dark {
+  --aw-color-text-primary: #f0f6fc;
+  --aw-color-text-secondary: #8b949e;
+  --aw-color-text-muted: #6e7681;
+  --aw-color-accent: #58a6ff;
+  --aw-color-border: #30363d;
+  --aw-color-code-bg: #21262d;
+  
+  --aw-color-bg-page: #0d1117;
+  --aw-color-bg-card: #161b22;
+}
+
 @layer utilities {
   /* Page Background - Light Mode: Pure White */
   .bg-page {
     background-color: var(--aw-color-bg-page);
   }
-  
+
   /* Page Background - Dark Mode: True Black */
   .bg-dark {
     background-color: var(--aw-color-bg-page-dark);
   }
-  
+
   .bg-light {
     background-color: var(--aw-color-bg-page);
   }
-  
+
   /* Card Background - matches page mode exactly */
   .bg-card {
     background-color: var(--aw-color-bg-card);
   }
-  
+
   .bg-alt {
     background-color: var(--aw-color-bg-alt);
   }
-  
+
   /* Gradient Page Background - Light (solid color fallback) */
   .bg-gradient-page {
     background-color: var(--aw-color-bg-page);
   }
-  
+
   /* Gradient Page Background - Dark (solid color fallback) */
   .bg-gradient-page-dark {
     background-color: var(--aw-color-bg-page-dark);
   }
-  
+
   .text-page {
     color: var(--aw-color-text-page);
   }
   .text-muted {
     color: var(--aw-color-text-muted);
+  }
+  .text-primary {
+    color: var(--aw-color-text-primary);
+  }
+  .text-secondary {
+    color: var(--aw-color-text-secondary);
   }
   .glow-primary {
     background-image: var(--aw-glow-primary);

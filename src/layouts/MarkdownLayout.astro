@@ -6,6 +6,9 @@ import type { MetaData } from '~/types';
 export interface Props {
   frontmatter: {
     title?: string;
+    publishDate?: string | Date;
+    author?: string;
+    readingTime?: number;
   };
 }
 
@@ -14,15 +17,81 @@ const { frontmatter } = Astro.props;
 const metadata: MetaData = {
   title: frontmatter?.title,
 };
+
+// Format date to readable string
+function formatDate(date: string | Date | undefined): string {
+  if (!date) return '';
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl bg-card">
-    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter">{frontmatter.title}</h1>
+  <article class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-blog-prose bg-card">
+    <!-- Blog Header -->
+    <header class="mb-12">
+      <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter text-text-primary">
+        {frontmatter.title}
+      </h1>
+      
+      <!-- Meta Information -->
+      {(frontmatter.publishDate || frontmatter.author || frontmatter.readingTime) && (
+        <div class="flex flex-wrap items-center gap-4 mt-6 text-blog-small text-text-secondary">
+          {frontmatter.publishDate && (
+            <time datetime={String(frontmatter.publishDate)}>
+              {formatDate(frontmatter.publishDate)}
+            </time>
+          )}
+          {frontmatter.publishDate && frontmatter.author && <span>•</span>}
+          {frontmatter.author && (
+            <span>{frontmatter.author}</span>
+          )}
+          {(frontmatter.publishDate || frontmatter.author) && frontmatter.readingTime && <span>•</span>}
+          {frontmatter.readingTime && (
+            <span>{frontmatter.readingTime} min read</span>
+          )}
+        </div>
+      )}
+    </header>
+    
+    <!-- Blog Content -->
     <div
-      class="mx-auto prose prose-lg max-w-4xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+      class="mx-auto prose prose-blog max-w-blog-content dark:prose-invert 
+             prose-headings:font-heading 
+             prose-headings:font-bold 
+             prose-headings:tracking-tight
+             prose-h2:mt-12 
+             prose-h2:mb-4
+             prose-h3:mt-8 
+             prose-h3:mb-3
+             prose-p:mb-6
+             prose-a:text-accent 
+             prose-a:no-underline
+             prose-a:hover:text-primary
+             prose-img:rounded-lg 
+             prose-img:shadow-md
+             prose-table:block
+             prose-table:overflow-x-auto
+             prose-thead:border-border
+             prose-th:border-border
+             prose-td:border-border
+             prose-pre:bg-code-bg
+             prose-pre:rounded-lg
+             prose-pre:p-6
+             prose-code:bg-code-bg
+             prose-code:px-2
+             prose-code:py-1
+             prose-code:rounded
+             prose-blockquote:border-l-4
+             prose-blockquote:border-accent
+             prose-blockquote:pl-6
+             prose-blockquote:italic
+             prose-blockquote:text-text-secondary"
     >
       <slot />
     </div>
-  </section>
+  </article>
 </Layout>
