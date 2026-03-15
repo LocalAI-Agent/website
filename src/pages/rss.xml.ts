@@ -2,7 +2,7 @@ import { getRssString } from '@astrojs/rss';
 
 import { SITE, METADATA, APP_BLOG } from 'astrowind:config';
 import { fetchPosts } from '~/utils/blog';
-import { getPermalink, getAsset } from '~/utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 export const GET = async () => {
   if (!APP_BLOG.isEnabled) {
@@ -26,11 +26,17 @@ export const GET = async () => {
       description: post.excerpt,
       pubDate: post.publishDate,
       categories: post.tags?.map((tag) => tag.title) || [],
-      author: post.author,
-      customData: post.image ? `<enclosure url="${getAsset(post.image)}" type="image/webp" />` : undefined,
+      // Don't include enclosure without proper length - causes validation errors
+      // Don't include author without email - causes validation errors
     })),
 
     trailingSlash: SITE.trailingSlash,
+    
+    // Add atom:self link for RSS validation
+    xmlns: {
+      atom: 'http://www.w3.org/2005/Atom',
+    },
+    customData: `<atom:link href="${import.meta.env.SITE}/rss.xml" rel="self" type="application/rss+xml" />`,
   });
 
   return new Response(rss, {
