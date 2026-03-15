@@ -10,16 +10,12 @@ tags:
   - Function Calling
   - AI Agents
   - LLMOps
-keywords:
-  - MCP
-  - LLM
-  - AI Agents
 readingTime: 8
 featured: true
 trending: false
 priority: 0.9
 metadata:
-  canonical: https://localaiagent.tech/blog/mcp-vs-function-calling
+  canonical: https://localaiagent.tech/blog/mcp-fuction-call
   robots:
     index: true
     follow: true
@@ -241,6 +237,6 @@ Stop writing brittle glue code. Start by building your first MCP server using th
 
 ## Internal & External Links
 
-* [Introduction to AI Agent Orchestration](https://camunda.com/blog/2025/02/why-ai-agents-needs-orchestration/)
+* [VLLM VS SGLANG](https://localaiagent.tech/blog/mcp-fuction-call)
 * [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
 * [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
