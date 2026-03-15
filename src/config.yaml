@@ -45,13 +45,6 @@ i18n:
   language: en
   textDirection: ltr
 
-# Analytics Configuration
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # 替换为你的 Google Analytics ID，例如：G-XXXXXXXXXX
-      partytown: false
-
 apps:
   blog:
     isEnabled: true
@@ -88,10 +81,12 @@ apps:
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
+# Analytics Configuration
 analytics:
   vendors:
     googleAnalytics:
       id: null # Add your Google Analytics ID: G-XXXXXXXXXX
+      partytown: false
 
 ui:
   theme: 'system'
