@@ -2,9 +2,9 @@
 import { getCanonical } from '~/utils/permalinks';
 import { SITE } from 'astrowind:config';
 
-// Use the favicon icon.webp as default Twitter card image
-// This is a local asset that will be processed by Astro
-const defaultImage = getCanonical('/_astro/icon.webp');
+// Use the main hero image as Twitter card image for better visibility
+// This image is already optimized and has proper dimensions (1200x675)
+const defaultImage = getCanonical('/_astro/local-ai-agent-edge-server-hardware.EkZa4Ob2_ZKEcKq.jpg');
 ---
 
 <meta charset="UTF-8" />
