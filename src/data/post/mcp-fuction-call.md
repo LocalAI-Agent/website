@@ -5,7 +5,6 @@ title: "MCP vs Function Calling: AI Tool Integration Guide"
 excerpt: "Learn how MCP provides scalable, secure AI tool integration."
 description: "Discover how MCP (Model Context Protocol) compares to traditional Function Calling for AI agents. Learn the architectural differences, migration strategies, and why MCP reduces integration debt by up to 60%."
 image: "~/assets/images/blog/mcp-vs-function-calling.webp"
-category: AI Engineering
 
 keywords:
   - MCP vs Function Calling

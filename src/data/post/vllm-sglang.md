@@ -5,7 +5,7 @@ title: "vLLM vs SGLang: Enterprise LLM Inference Comparison"
 excerpt: "Compare vLLM and SGLang for enterprise AI deployment."
 description: "Technical comparison of vLLM vs SGLang for enterprise AI inference. Learn how PagedAttention and RadixAttention impact throughput, latency, and GPU utilization in production AI systems."
 image: "~/assets/images/blog/vllm-vs-sglang.webp"
-category: AI Infrastructure
+
 keywords:
   - vLLM vs SGLang
   - Best LLM inference engine 2026
