@@ -65,11 +65,11 @@ apps:
         follow: true
 
     category:
-      isEnabled: true
+      isEnabled: false
       pathname: 'category'
       robots:
-        index: true
-        follow: true
+        index: false
+        follow: false
 
     tag:
       isEnabled: true
