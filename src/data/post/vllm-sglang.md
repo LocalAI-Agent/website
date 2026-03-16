@@ -164,13 +164,8 @@ As the landscape shifts toward more autonomous AI agents, we expect to see these
 
 ## Related Articles
 
-### 🔗 Internal Links
-
 * [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Tool integration patterns for AI systems
 * [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
-
-### 📚 External Resources
-
 * [vLLM Official Documentation](https://docs.vllm.ai/) — Complete vLLM setup guide
 * [SGLang GitHub Repository](https://github.com/sgl-project/sglang) — Official SGLang implementation
 * [PagedAttention Paper](https://arxiv.org/abs/2309.10380) — Technical foundation of vLLM

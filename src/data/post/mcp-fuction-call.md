@@ -183,13 +183,8 @@ The transition from manual **Function Calling** to the **Model Context Protocol*
 
 ## Related Articles
 
-### 🔗 Internal Links
-
 * [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Build your own privacy-first AI agents
 * [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Choose the right inference engine
-
-### 📚 External Resources
-
 * [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol) — Official MCP announcement
 * [MCP GitHub Repository](https://github.com/modelcontextprotocol) — Official implementation
 * [LangChain MCP Integration](https://python.langchain.com/docs/integrations/mcp/) — Python integration guide

@@ -191,13 +191,8 @@ The key to success is consistency: monitor performance metrics, iterate based on
 
 ## Related Articles
 
-### 🔗 Internal Links
-
 * [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
 * [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
-
-### 📚 External Resources
-
 * [Ollama Official Documentation](https://ollama.com/docs) — Complete setup and configuration guide
 * [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Build multi-agent systems
 * [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents
