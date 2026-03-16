@@ -154,14 +154,11 @@ As the landscape shifts toward more autonomous AI agents, we expect to see these
 
 ### FAQ
 
-**Q: Can I use SGLang with vLLM as a backend?** 
-**A:** Historically, SGLang could use vLLM, but it now features its own high-performance "SRouter" and "Sgl-kernel" which are optimized for its RadixAttention architecture.
+**Q: Can I use SGLang with vLLM as a backend?** Historically, SGLang could use vLLM, but it now features its own high-performance "SRouter" and "Sgl-kernel" which are optimized for its RadixAttention architecture.
 
-**Q: Is SGLang harder to deploy than vLLM?** 
-**A:** Slightly. vLLM is very "plug-and-play." SGLang requires a bit more configuration of the runtime environment to get the full benefits of its structured language features.
+**Q: Is SGLang harder to deploy than vLLM?** Slightly. vLLM is very "plug-and-play." SGLang requires a bit more configuration of the runtime environment to get the full benefits of its structured language features.
 
-**Q: Which is better for RAG?** 
-**A:** SGLang generally wins in RAG scenarios where users ask multiple questions about the same uploaded document, as it caches the document's KV cache tokens.
+**Q: Which is better for RAG?** SGLang generally wins in RAG scenarios where users ask multiple questions about the same uploaded document, as it caches the document's KV cache tokens.
 
 ---
 

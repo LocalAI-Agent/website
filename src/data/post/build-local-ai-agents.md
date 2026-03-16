@@ -177,20 +177,15 @@ The key to success is consistency: monitor performance metrics, iterate based on
 
 ## FAQs
 
-**Q1. What hardware do I need to run AI agents locally on my computer?** 
-**A:**You'll need a GPU with sufficient VRAM to run local AI models effectively. For quantized 4-bit models, approximately 5GB VRAM works for 7B models, 10GB for 14B models, 20GB for 32B models, and 40GB for 70B models. An NVIDIA GTX/RTX card with 8-12GB VRAM serves as a practical minimum for 2025. Apple M-series chips with unified memory architecture are also surprisingly capable for running large models.
+**Q1. What hardware do I need to run AI agents locally on my computer?** You'll need a GPU with sufficient VRAM to run local AI models effectively. For quantized 4-bit models, approximately 5GB VRAM works for 7B models, 10GB for 14B models, 20GB for 32B models, and 40GB for 70B models. An NVIDIA GTX/RTX card with 8-12GB VRAM serves as a practical minimum for 2025. Apple M-series chips with unified memory architecture are also surprisingly capable for running large models.
 
-**Q2. How fast are local AI agents compared to cloud-based solutions?** 
-**A:**Local AI agents deliver response times between 10-50ms with no network delays, significantly faster than cloud-based alternatives. This speed advantage comes from eliminating network latency entirely, as all processing happens on your own hardware. Additionally, you avoid recurring API fees that can reach $300-500 monthly while maintaining complete data privacy.
+**Q2. How fast are local AI agents compared to cloud-based solutions?** Local AI agents deliver response times between 10-50ms with no network delays, significantly faster than cloud-based alternatives. This speed advantage comes from eliminating network latency entirely, as all processing happens on your own hardware. Additionally, you avoid recurring API fees that can reach $300-500 monthly while maintaining complete data privacy.
 
-**Q3. What are the main security benefits of running AI agents locally?** 
-**A:**Running AI agents locally ensures your data never leaves your infrastructure, which is crucial for handling confidential client data, health records, or proprietary research. You can implement network isolation by placing agents on isolated segments listening only on 127.0.0.1, use authentication tokens for all connections, and run agents in Docker containers with read-only filesystems. All agent actions, tool calls, and permission decisions can be logged to immutable audit trails.
+**Q3. What are the main security benefits of running AI agents locally?** Running AI agents locally ensures your data never leaves your infrastructure, which is crucial for handling confidential client data, health records, or proprietary research. You can implement network isolation by placing agents on isolated segments listening only on 127.0.0.1, use authentication tokens for all connections, and run agents in Docker containers with read-only filesystems. All agent actions, tool calls, and permission decisions can be logged to immutable audit trails.
 
-**Q4. Which AI models should beginners start with for local agents?**
-**A:** Beginners should start with 7B to 14B models if they have a GPU with 8-16GB VRAM. Popular starting points include Llama 3.3 8B or Mistral Nemo. Mac users should download models in GGUF format, while Windows/Nvidia users benefit from AWQ format for faster response times. For basic agents with tool-calling capabilities, qwen3:8b offers reliable performance.
+**Q4. Which AI models should beginners start with for local agents?**Beginners should start with 7B to 14B models if they have a GPU with 8-16GB VRAM. Popular starting points include Llama 3.3 8B or Mistral Nemo. Mac users should download models in GGUF format, while Windows/Nvidia users benefit from AWQ format for faster response times. For basic agents with tool-calling capabilities, qwen3:8b offers reliable performance.
 
-**Q5. What are common real-world applications for local AI agents?** 
-**A:**Local AI agents are used for data science workflows without coding knowledge, financial analysis on local spreadsheets while maintaining privacy, and media file processing. Customer service teams deploy them for issue triage and email generation. Healthcare organizations use them for appointment scheduling and clinical documentation assistance. HR departments leverage them for job posting, interview scheduling, and benefits explanation.
+**Q5. What are common real-world applications for local AI agents?** Local AI agents are used for data science workflows without coding knowledge, financial analysis on local spreadsheets while maintaining privacy, and media file processing. Customer service teams deploy them for issue triage and email generation. Healthcare organizations use them for appointment scheduling and clinical documentation assistance. HR departments leverage them for job posting, interview scheduling, and benefits explanation.
 
 ---
 
