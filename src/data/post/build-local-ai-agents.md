@@ -191,9 +191,14 @@ The key to success is consistency: monitor performance metrics, iterate based on
 
 ## Related Articles
 
-* [MCP vs Function Calling: AI Tool Integration Guide](https://localaiagent.tech/blog/mcp-fuction-call)
-* [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
-* [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
-* [vLLM Official Documentation](https://docs.vllm.ai/)
-* [SGLang GitHub Repository](https://github.com/sgl-project/sglang)
-* [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+### 🔗 Internal Links
+
+* [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
+* [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
+
+### 📚 External Resources
+
+* [Ollama Official Documentation](https://ollama.com/docs) — Complete setup and configuration guide
+* [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Build multi-agent systems
+* [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents
+* [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — Enterprise AI governance

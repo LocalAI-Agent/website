@@ -164,9 +164,14 @@ As the landscape shifts toward more autonomous AI agents, we expect to see these
 
 ## Related Articles
 
-* [MCP vs Function Calling: AI Tool Integration Guide](https://localaiagent.tech/blog/mcp-fuction-call)
-* [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
-* [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
-* [vLLM Official Documentation](https://docs.vllm.ai/)
-* [SGLang GitHub Repository](https://github.com/sgl-project/sglang)
-* [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+### 🔗 Internal Links
+
+* [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Tool integration patterns for AI systems
+* [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
+
+### 📚 External Resources
+
+* [vLLM Official Documentation](https://docs.vllm.ai/) — Complete vLLM setup guide
+* [SGLang GitHub Repository](https://github.com/sgl-project/sglang) — Official SGLang implementation
+* [PagedAttention Paper](https://arxiv.org/abs/2309.10380) — Technical foundation of vLLM
+* [vLLM vs LM Deploy](https://www.benchmark.to/llm-inference) — Additional inference engine comparisons

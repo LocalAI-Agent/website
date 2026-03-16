@@ -183,9 +183,14 @@ The transition from manual **Function Calling** to the **Model Context Protocol*
 
 ## Related Articles
 
-* [vLLM vs SGLang: Enterprise LLM Inference Comparison](https://localaiagent.tech/blog/vllm-sglang)
-* [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
-* [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
-* [LangChain MCP Integration](https://python.langchain.com/docs/integrations/mcp/)
-* [OpenAI Function Calling Documentation](https://platform.openai.com/docs/guides/function-calling)
-* [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+### 🔗 Internal Links
+
+* [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Build your own privacy-first AI agents
+* [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Choose the right inference engine
+
+### 📚 External Resources
+
+* [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol) — Official MCP announcement
+* [MCP GitHub Repository](https://github.com/modelcontextprotocol) — Official implementation
+* [LangChain MCP Integration](https://python.langchain.com/docs/integrations/mcp/) — Python integration guide
+* [OpenAI Function Calling Documentation](https://platform.openai.com/docs/guides/function-calling) — OpenAI's approach
