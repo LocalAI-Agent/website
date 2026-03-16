@@ -1,17 +1,18 @@
 ---
 publishDate: 2026-03-15
 author: Jiahao
-title: "vLLM vs SGLang: Enterprise LLM Inference Comparison"
-excerpt: "Compare vLLM and SGLang for enterprise AI deployment."
-description: "Technical comparison of vLLM vs SGLang for enterprise AI inference. Learn how PagedAttention and RadixAttention impact throughput, latency, and GPU utilization in production AI systems."
-image: "~/assets/images/blog/vllm-vs-sglang.webp"
+title: "How to Build Local AI Agents: A Privacy-First Guide"
+excerpt: "Learn how to build privacy-first AI agents that run entirely on your hardware."
+description: "Learn how to build local AI agents from scratch. Step-by-step guide covering Ollama setup, LangGraph, security, and production deployment."
+image: "~/assets/images/blog/build-local-ai-agents.webp"
 
 keywords:
-  - vLLM vs SGLang
-  - Best LLM inference engine 2026
-  - RadixAttention vs PagedAttention
-  - KV Cache management
-  - AI inference optimization
+  - build local AI agents
+  - local AI agents tutorial
+  - privacy-first AI
+  - Ollama guide
+  - private AI agents
+  - local LLM agents
 
 readingTime: 12
 featured: true
