@@ -160,7 +160,7 @@ As the landscape shifts toward more autonomous AI agents, we expect to see these
 
 ---
 
-## Internal & External Links
+## Related Articles
 
 * [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call)
 * [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
