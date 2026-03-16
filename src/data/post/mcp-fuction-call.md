@@ -186,7 +186,7 @@ The transition from manual **Function Calling** to the **Model Context Protocol*
 
 ## Related Articles
 
-* [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang)
+* [vLLM vs SGLang: Enterprise LLM Inference Comparison](https://localaiagent.tech/blog/vllm-sglang)
 * [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
 * [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
 * [LangChain MCP Integration](https://python.langchain.com/docs/integrations/mcp/)

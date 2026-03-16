@@ -165,7 +165,7 @@ As the landscape shifts toward more autonomous AI agents, we expect to see these
 
 ## Related Articles
 
-* [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call)
+* [MCP vs Function Calling: AI Tool Integration Guide](https://localaiagent.tech/blog/mcp-fuction-call)
 * [Local LLM Deployment Guide](https://medium.com/@rosgluk/local-llm-hosting-complete-2025-guide-ollama-vllm-localai-jan-lm-studio-more-f98136ce7e4a)
 * [Anthropic: Model Context Protocol Announcement](https://www.anthropic.com/news/model-context-protocol)
 * [vLLM Official Documentation](https://docs.vllm.ai/)
