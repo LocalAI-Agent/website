@@ -36,6 +36,15 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
 
+    <!-- Writesonic SEO Fixer -->
+    <script src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js" id="wsAiSeoMb" type="application/javascript"></script>
+    <script id="wsAiSeoInitScript">
+      wsSEOfixer.configure({
+        hostURL: 'https://seo-fixer.writesonic.com',
+        siteID: '69b74f9a47f615e0a53978a7'
+      });
+    </script>
+
     <!-- Inline critical CSS for faster LCP -->
     <style is:inline>
       /* Critical CSS - Base styles for above-the-fold content */
