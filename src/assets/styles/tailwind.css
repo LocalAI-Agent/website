@@ -52,11 +52,11 @@
   --aw-color-text-body: #1a1a1a;
   --aw-color-text-heading: #111111;
   --aw-color-text-link: #1e88e5;
-  --aw-color-text-secondary: #6b6b6b;
-  --aw-color-text-light: #9b9b9b;
-  --aw-color-text-muted: #718096;
+  --aw-color-text-secondary: #525252;
+  --aw-color-text-light: #737373;
+  --aw-color-text-muted: #525252;
   --aw-color-code-bg: #f5f5f5;
-  --aw-color-blockquote: #555555;
+  --aw-color-blockquote: #404040;
   --aw-color-border: #d0d0d0;
   --aw-color-accent: #1e88e5;
   --aw-color-bg-page: #ffffff;
@@ -65,18 +65,18 @@
 
 /* Dark Mode */
 .dark {
-  --aw-color-text-body: #e0e0e0;
+  --aw-color-text-body: #e5e5e5;
   --aw-color-text-heading: #ffffff;
-  --aw-color-text-link: #64b5f6;
-  --aw-color-text-secondary: #a0a0a0;
-  --aw-color-text-light: #707070;
-  --aw-color-text-muted: #6e7681;
+  --aw-color-text-link: #60a5fa;
+  --aw-color-text-secondary: #a3a3a3;
+  --aw-color-text-light: #a3a3a3;
+  --aw-color-text-muted: #a3a3a3;
   --aw-color-code-bg: #1e1e1e;
-  --aw-color-blockquote: #a0a0a0;
+  --aw-color-blockquote: #a3a3a3;
   --aw-color-border: #404040;
-  --aw-color-accent: #64b5f6;
+  --aw-color-accent: #60a5fa;
   --aw-color-bg-page: #0a0a0a;
-  --aw-color-bg-card: #141414;
+  --aw-color-bg-card: #0a0a0a;
 }
 
 @layer utilities {
