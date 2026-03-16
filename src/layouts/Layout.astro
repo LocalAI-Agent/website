@@ -10,9 +10,6 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
-// Comment the line below to disable View Transitions
-import { ClientRouter } from 'astro:transitions';
-
 import type { MetaData as MetaDataType } from '~/types';
 
 // Import CSS for bundling - Astro will handle the asset URL
@@ -36,6 +33,9 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
 
+    <!-- Preconnect to self for faster resource loading -->
+    <link rel="preconnect" href="/" />
+
     <!-- Inline critical CSS for faster LCP -->
     <style is:inline>
       /* Critical CSS - Base styles for above-the-fold content */
@@ -44,18 +44,23 @@ const { language, textDirection } = I18N;
       .min-h-screen{min-height:100vh}
       .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
       .bg-page{background-color:var(--aw-color-bg-page,#fff)}
-      .dark{--aw-color-bg-page:#0a0a0a;--aw-color-text-body:#e0e0e0}
+      .dark{--aw-color-bg-page:#0a0a0a;--aw-color-text-body:#e5e5e5}
       .dark .bg-dark{background-color:var(--aw-color-bg-page,#0a0a0a)}
-      .tracking-tight{letter-spacing:-0.025em}
+      .tracking-tight{letter-spacing:-.025em}
       .text-default{color:var(--aw-color-text-default,#1a1a1a)}
+      /* Header styles for sticky behavior */
+      #header{position:sticky;top:0;z-index:40;transition:opacity .15s}
+      #header.scroll{box-shadow:0 1px 3px #0000001a}
+      #header.scroll.dark{box-shadow:0 1px 3px #0000004d}
     </style>
 
     <!-- Load non-critical CSS asynchronously -->
     <link rel="preload" href={tailwindCSS} as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href={tailwindCSS} /></noscript>
 
-    <!-- Comment the line below to disable View Transitions -->
-    <ClientRouter fallback="swap" />
+    <!-- View Transitions - loaded after critical content -->
+    <meta name="astro-view-transitions-enabled" content="true" />
+    <meta name="astro-view-transitions-fallback" content="swap" />
   </head>
 
   <body class="antialiased text-default bg-page dark:bg-dark tracking-tight min-h-screen">
@@ -63,5 +68,8 @@ const { language, textDirection } = I18N;
 
     <BasicScripts />
     <Analytics />
+    
+    <!-- Load ClientRouter after page content for non-blocking execution -->
+    <script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DZnDNxNb.js" async></script>
   </body>
 </html>
