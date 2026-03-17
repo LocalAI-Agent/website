@@ -36,39 +36,6 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
 
-    <!-- Writesonic SEO Fixer -->
-    <script src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js" id="wsAiSeoMb" type="application/javascript"></script>
-    <script id="wsAiSeoInitScript">
-      wsSEOfixer.configure({
-        hostURL: 'https://seo-fixer.writesonic.com',
-        siteID: '69b74f9a47f615e0a53978a7'
-      });
-    </script>
-
-    <!-- Inline critical CSS for faster LCP -->
-    <style is:inline>
-      /* Critical CSS - Base styles for above-the-fold content */
-      *,*::before,*::after{box-sizing:border-box}
-      body{margin:0;font-family:var(--aw-font-sans,system-ui,sans-serif);font-size:var(--aw-font-size-body,16px);line-height:var(--aw-line-height-body,1.6);color:var(--aw-color-text-body,#1a1a1a);background-color:var(--aw-color-bg-page,#fff)}
-      .min-h-screen{min-height:100vh}
-      .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-      .bg-page{background-color:var(--aw-color-bg-page,#fff)}
-      .dark{--aw-color-bg-page:#0a0a0a;--aw-color-text-body:#e5e5e5}
-      .dark .bg-dark{background-color:var(--aw-color-bg-page,#0a0a0a)}
-      .tracking-tight{letter-spacing:-.025em}
-      .text-default{color:var(--aw-color-text-default,#1a1a1a)}
-      /* Header styles for sticky behavior */
-      #header{position:sticky;top:0;z-index:40;transition:opacity .15s}
-      #header.scroll{box-shadow:0 1px 3px #0000001a}
-      #header.scroll.dark{box-shadow:0 1px 3px #0000004d}
-      /* Critical icon styles to prevent CLS */
-      .w-12{width:3rem}.h-12{height:3rem}.w-6{width:1.5rem}.h-6{height:1.5rem}
-      .flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}
-      .flex-shrink-0{flex-shrink:0}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}
-      .space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}.p-4{padding:1rem}
-      .rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}
-    </style>
-
     <!-- Preload critical font to reduce key request chain -->
     <link rel="preload" href="/_astro/inter-latin-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -82,6 +49,26 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+
+    <!-- Writesonic SEO Fixer - Load asynchronously to avoid blocking LCP -->
+    <script src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js" id="wsAiSeoMb" type="application/javascript" defer></script>
+    <script id="wsAiSeoInitScript" defer>
+      // Initialize Writesonic SEO Fixer after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initWritesonic);
+      } else {
+        initWritesonic();
+      }
+      
+      function initWritesonic() {
+        if (typeof wsSEOfixer !== 'undefined') {
+          wsSEOfixer.configure({
+            hostURL: 'https://seo-fixer.writesonic.com',
+            siteID: '69b74f9a47f615e0a53978a7'
+          });
+        }
+      }
+    </script>
 
     <BasicScripts />
     <Analytics />
