@@ -40,6 +40,12 @@ const metadata = merge(
         ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] }
         : {}),
     },
+    twitter: {
+      cardType: 'summary_large_image',
+      ...(image
+        ? { image: typeof image === 'string' ? image : (image as ImageMetadata)?.src || String(image) }
+        : {}),
+    },
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
