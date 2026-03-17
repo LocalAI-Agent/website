@@ -8,7 +8,8 @@ import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
-import { adaptOpenGraphImages } from '~/utils/images';
+import { adaptOpenGraphImages, findImage } from '~/utils/images';
+import type { ImageMetadata } from 'astro';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -27,30 +28,64 @@ const {
 // Default Twitter/OpenGraph image - use Astro's processed icon
 const defaultImage = getCanonical('/_astro/icon.webp');
 
-// Helper function to adapt Twitter images (similar to OpenGraph)
-async function adaptTwitterImages(twitterOpenGraph: typeof openGraph = {}, site?: URL) {
-  if (!site) return twitterOpenGraph;
-  if (!twitterOpenGraph?.images?.length) return twitterOpenGraph;
-
-  const images = twitterOpenGraph.images.map((image) => {
-    if (typeof image === 'string') {
-      try {
-        return new URL(image, site).toString();
-      } catch {
-        return image;
-      }
+// Helper function to adapt Twitter card image and return the resolved image URL
+async function resolveTwitterImage(twitterCard: typeof twitter = {}, site?: URL): Promise<string | undefined> {
+  if (!site || !twitterCard?.image) return undefined;
+  
+  const resolvedImage = await findImage(twitterCard.image);
+  if (!resolvedImage) return undefined;
+  
+  if (typeof resolvedImage === 'string') {
+    // External URL or absolute path
+    if (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) {
+      return resolvedImage;
     }
-    if (typeof image.url === 'string') {
-      try {
-        return { ...image, url: new URL(image.url, site).toString() };
-      } catch {
-        return image;
-      }
+    if (resolvedImage.startsWith('/')) {
+      return new URL(resolvedImage, site).toString();
     }
-    return image;
-  });
+    return resolvedImage;
+  }
+  
+  if (typeof resolvedImage === 'object' && 'src' in resolvedImage) {
+    // Astro ImageMetadata - create optimized URL
+    return new URL(resolvedImage.src, site).toString();
+  }
+  
+  return undefined;
+}
 
-  return { ...twitterOpenGraph, images };
+// Helper function to adapt Twitter card (for other properties)
+async function adaptTwitterCard(twitterCard: typeof twitter = {}, site?: URL) {
+  if (!site) return twitterCard;
+  
+  const result = { ...twitterCard };
+  
+  // Handle 'images' array (like OpenGraph)
+  if (result.images?.length) {
+    const images = result.images.map((image) => {
+      if (typeof image === 'string') {
+        try {
+          return new URL(image, site).toString();
+        } catch {
+          return image;
+        }
+      }
+      if (typeof image.url === 'string') {
+        try {
+          return { ...image, url: new URL(image.url, site).toString() };
+        } catch {
+          return image;
+        }
+      }
+      return image;
+    });
+    result.images = images;
+  }
+  
+  // Remove 'image' property since we'll handle it separately
+  delete result.image;
+  
+  return result;
 }
 
 const seoProps: AstroSeoProps = merge(
@@ -106,6 +141,10 @@ const seoProps: AstroSeoProps = merge(
     },
   }
 );
+
+// Resolve the Twitter card image URL
+const twitterImageUrl = await resolveTwitterImage(seoProps.twitter, Astro.site);
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site), twitter: await adaptTwitterImages(seoProps?.twitter, Astro.site) }} />
+<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site), twitter: await adaptTwitterCard(seoProps?.twitter, Astro.site) }} />
+{twitterImageUrl && <meta name="twitter:image" content={twitterImageUrl} />}

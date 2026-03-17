@@ -41,6 +41,7 @@ const metadataDefinition = () =>
           handle: z.string().optional(),
           site: z.string().optional(),
           cardType: z.string().optional(),
+          image: z.string().optional(),
         })
         .optional(),
     })

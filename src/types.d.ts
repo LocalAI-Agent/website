@@ -86,6 +86,7 @@ export interface MetaDataTwitter {
   handle?: string;
   site?: string;
   cardType?: string;
+  image?: string;
 }
 
 export interface Image {
