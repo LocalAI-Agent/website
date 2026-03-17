@@ -267,19 +267,67 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Join the Waitlist Section ***** -->
+  <!-- Detailed FAQ Section ********** -->
 
-  <CallToAction
-    title="Be the First to Try LocalAI Agent"
-    subtitle="Join our early access list to be notified when we launch and get exclusive updates."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Join the Waitlist',
-        href: getPermalink('/contact'),
-      },
-    ]}
-  />
+  <section class="py-16 md:py-24 bg-alt">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center">
+          Get answers to common questions about LocalAI Agent and local AI deployment.
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              What is LocalAI Agent?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              LocalAI Agent is an enterprise solution that helps organizations deploy AI models locally and run enterprise-grade AI agents on their own infrastructure, ensuring data privacy, security, and low-latency inference.
+            </p>
+          </div>
+
+          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              Why deploy AI models locally?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Local AI deployment provides complete data privacy, reduced latency, lower costs, and full control over your AI infrastructure. It eliminates dependency on cloud providers and keeps sensitive enterprise data within your organization.
+            </p>
+          </div>
+
+          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              What AI models are supported?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              LocalAI Agent supports open-source LLMs including Llama, Mistral, Falcon, and other transformer-based models. Our platform is model-agnostic and optimized for enterprise deployment.
+            </p>
+          </div>
+
+          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              What are the hardware requirements?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              For 7B models, you need 8GB VRAM. For 14B models, plan for 12-16GB VRAM. NVIDIA GPUs (RTX 3090/4090 or A100) are recommended for best performance.
+            </p>
+          </div>
+
+          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
+            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              How is data security ensured?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              All AI processing happens on your infrastructure. Your data never leaves your network, ensuring compliance with GDPR, HIPAA, and SOC 2.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Stay Connected Section ******* -->
 
