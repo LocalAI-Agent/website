@@ -8,8 +8,8 @@
 
 /* 1. Reserve space for all images to prevent layout shift */
 img {
-  aspect-ratio: attr(width) / attr(height);
   content-visibility: auto;
+  contain-intrinsic-size: auto;
 }
 
 /* 2. Ensure images in markdown content have reserved space */
@@ -67,12 +67,7 @@ img {
 }
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.05) 25%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.05) 75%
-  );
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 75%);
   background-size: 200% 100%;
   animation: skeleton-loading 1.5s infinite;
   border-radius: 0.375rem;
@@ -112,7 +107,12 @@ html {
 }
 
 /* 10. Ensure consistent heading heights */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--aw-font-heading);
   line-height: var(--aw-line-height-h1);
   letter-spacing: var(--aw-letter-spacing-heading);
@@ -149,8 +149,20 @@ img.cls-protected {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 13. Hero section image container - CLS prevention */
+.hero-image-container {
+  contain: layout;
+  isolation: isolate;
+}
+
+/* 14. Section containers with min-height should maintain size */
+section[style*='min-height'] {
+  contain: layout style;
+}
+
 /* 13. Prevent layout shift during image load */
-img:not([src]), img[src=""] {
+img:not([src]),
+img[src=''] {
   min-height: 200px;
 }
 
@@ -165,8 +177,8 @@ img:not([src]), img[src=""] {
 }
 
 /* 16. Sticky header CLS prevention */
-header[style*="position: sticky"],
-header[style*="position:fixed"] {
+header[style*='position: sticky'],
+header[style*='position:fixed'] {
   contain: layout;
 }
 
@@ -203,7 +215,7 @@ section.relative:first-of-type {
   .motion-safe\\:md\\:opacity-0 {
     opacity: 1;
   }
-  
+
   .motion-safe\\:md\\:intersect\\:animate-fade[no-intersect] {
     opacity: 1;
     animation: none;
@@ -228,8 +240,8 @@ html {
 /* 24. Fix icon CLS - ensure consistent sizing for astro-icon components */
 [astro-icon],
 svg[aria-hidden],
-svg[class*="w-"],
-svg[class*="h-"] {
+svg[class*='w-'],
+svg[class*='h-'] {
   display: inline-block;
   flex-shrink: 0;
   contain: layout;
@@ -259,7 +271,7 @@ nav li {
 }
 
 /* 28. RSS and theme toggle buttons fixed size */
-a[aria-label="RSS Feed"],
+a[aria-label='RSS Feed'],
 button[data-aw-toggle-color-scheme] {
   min-width: 40px;
   min-height: 40px;
@@ -291,7 +303,7 @@ section.relative {
 
 /* 33. Button and action elements fixed height */
 button,
-a[role="button"],
+a[role='button'],
 .inline-flex.items-center {
   min-height: 40px;
   contain: layout;
@@ -303,7 +315,7 @@ a[role="button"],
   --aw-font-sans: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --aw-font-heading: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --aw-font-mono: 'Fira Code', 'Source Code Pro', 'Consolas', monospace;
-  
+
   /* Font Sizes */
   --aw-font-size-body: 16px;
   --aw-font-size-h1: 36px;
@@ -313,7 +325,7 @@ a[role="button"],
   --aw-font-size-h5: 18px;
   --aw-font-size-h6: 16px;
   --aw-font-size-code: 15px;
-  
+
   /* Line Heights */
   --aw-line-height-body: 1.6;
   --aw-line-height-h1: 1.2;
@@ -323,16 +335,16 @@ a[role="button"],
   --aw-line-height-h5: 1.4;
   --aw-line-height-h6: 1.4;
   --aw-line-height-code: 1.5;
-  
+
   /* Letter Spacing */
   --aw-letter-spacing-body: 0.5px;
   --aw-letter-spacing-heading: 0.75px;
   --aw-letter-spacing-code: 0px;
-  
+
   /* Spacing */
   --aw-paragraph-spacing-body: 16px;
   --aw-paragraph-spacing-heading: 24px;
-  
+
   /* Font Weights */
   --aw-font-weight-body: 400;
   --aw-font-weight-h1: 700;
@@ -342,7 +354,7 @@ a[role="button"],
   --aw-font-weight-h5: 500;
   --aw-font-weight-h6: 500;
   --aw-font-weight-code: 400;
-  
+
   /* Colors - Light Mode */
   --aw-color-text-body: #1a1a1a;
   --aw-color-text-heading: #111111;

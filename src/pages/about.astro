@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Features from '~/components/widgets/Features.astro';
 import { Image } from 'astro:assets';
 
 // Import images
@@ -42,11 +41,14 @@ const metadata = {
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Left: Content -->
         <div class="text-center lg:text-left">
-          <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient">
+          <h1
+            class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient"
+          >
             About LocalAI Agent
           </h1>
           <p class="text-lg text-gray-600 dark:text-gray-300">
-            We help businesses deploy AI on their own infrastructure. Our solution combines optimized hardware, local AI models, and intelligent agents.
+            We help businesses deploy AI on their own infrastructure. Our solution combines optimized hardware, local AI
+            models, and intelligent agents.
           </p>
           <p class="text-lg text-gray-600 dark:text-gray-300 mt-6 font-semibold">
             You keep full control over your data. Your AI systems stay secure and private.
@@ -92,24 +94,24 @@ const metadata = {
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto text-center" style="margin-top: -120px;">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
+        >
           Our Vision
         </h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-8 font-medium">
           The future of enterprise AI is local, secure, and controllable.
         </p>
         <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 bg-card/60 backdrop-blur-sm p-8 rounded-2xl">
-          <p>
-            Cloud AI services are powerful. But many organizations need more control over:
-          </p>
+          <p>Cloud AI services are powerful. But many organizations need more control over:</p>
         </div>
 
         <div class="mt-12 grid md:grid-cols-2 gap-6">
           <div class="glass-card rounded-xl p-6 holo-card cyber-border">
             <div class="flex items-center mb-4">
-
-
-          <div class="glass-card rounded-xl p-6 holo-card cyber-border">
+              <div class="glass-card rounded-xl p-6 holo-card cyber-border"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -120,10 +122,8 @@ const metadata = {
   <section class="py-16 md:py-24 bg-card glass-card">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">
-          What We Do
-        </h2>
-        
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">What We Do</h2>
+
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
           <!-- 3. Workflow Image: Beside What We Do Text -->
           <div>
@@ -131,15 +131,16 @@ const metadata = {
               src={workflowImage}
               alt="A professional engineer working on a high-tech dashboard displaying autonomous AI agent workflows."
               class="rounded-lg shadow-xl w-full"
-              width={1920} 
-              height={1080} 
+              width={1920}
+              height={1080}
               sizes="100vw"
-              style={{ objectFit: 'cover', height: '500px' }}            />
+              style={{ objectFit: 'cover', height: '500px' }}
+            />
             <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
               LocalAI Agent — Enterprise AI agent workflow management
             </p>
           </div>
-          
+
           <!-- Text Content -->
           <div class="space-y-6">
             <p class="text-lg text-gray-600 dark:text-gray-300">
@@ -150,7 +151,7 @@ const metadata = {
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
@@ -164,7 +165,7 @@ const metadata = {
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
@@ -178,7 +179,7 @@ const metadata = {
               <div class="flex items-start space-x-4">
                 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
@@ -200,19 +201,22 @@ const metadata = {
   <section class="py-16 md:py-24 bg-alt">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">
-          Why Local AI
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">Why Local AI</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12">
           Running AI locally provides critical advantages for enterprises:
         </p>
-        
+
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass-card rounded-xl p-6 holo-card">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  ></path>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold">Data Privacy</h3>
@@ -221,26 +225,30 @@ const metadata = {
               Sensitive business data stays within your organization.
             </p>
           </div>
-          
+
           <div class="glass-card rounded-xl p-6 holo-card">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold">Security</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 ml-16">
-              AI systems run inside your own infrastructure.
-            </p>
+            <p class="text-gray-600 dark:text-gray-300 ml-16">AI systems run inside your own infrastructure.</p>
           </div>
-          
+
           <div class="glass-card rounded-xl p-6 holo-card">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold">Low Latency</h3>
@@ -249,13 +257,22 @@ const metadata = {
               Local inference provides faster responses and more reliable performance.
             </p>
           </div>
-          
+
           <div class="glass-card rounded-xl p-6 holo-card">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold">Full Control</h3>
@@ -274,9 +291,7 @@ const metadata = {
   <section class="py-16 md:py-24 bg-card glass-card">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">
-          Our Approach
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">Our Approach</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12">
           LocalAI Agent combines hardware, software, and intelligent agents into a unified solution for enterprise AI.
         </p>
@@ -285,7 +300,7 @@ const metadata = {
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
               <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             <div>
@@ -296,7 +311,7 @@ const metadata = {
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
               <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             <div>
@@ -307,7 +322,7 @@ const metadata = {
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
               <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             <div>
@@ -318,7 +333,7 @@ const metadata = {
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
               <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             <div>
@@ -328,7 +343,8 @@ const metadata = {
         </div>
 
         <p class="text-lg text-gray-600 dark:text-gray-300 text-center mb-12">
-          This integrated architecture allows companies to deploy AI systems that are secure, efficient, and tailored to their needs.
+          This integrated architecture allows companies to deploy AI systems that are secure, efficient, and tailored to
+          their needs.
         </p>
 
         <!-- CTA Links Section -->
@@ -340,29 +356,32 @@ const metadata = {
           >
             <div class="flex items-center justify-center mb-4">
               <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-xl font-semibold mb-2">Contact Us</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Get in touch with our team to learn more.
-            </p>
+            <p class="text-gray-600 dark:text-gray-300">Get in touch with our team to learn more.</p>
           </a>
 
           <!-- Blog Link -->
-          <a
-            href="/blog"
-            class="glass-card rounded-xl p-6 holo-card hover:scale-105 transition-transform text-center"
-          >
+          <a href="/blog" class="glass-card rounded-xl p-6 holo-card hover:scale-105 transition-transform text-center">
             <div class="flex items-center justify-center mb-4">
               <svg class="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-xl font-semibold mb-2">Blog</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Read our latest insights on local AI.
-            </p>
+            <p class="text-gray-600 dark:text-gray-300">Read our latest insights on local AI.</p>
           </a>
 
           <!-- GitHub Link -->
@@ -374,13 +393,13 @@ const metadata = {
           >
             <div class="flex items-center justify-center mb-4">
               <svg class="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-xl font-semibold mb-2">GitHub</h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Explore our open source projects.
-            </p>
+            <p class="text-gray-600 dark:text-gray-300">Explore our open source projects.</p>
           </a>
         </div>
 

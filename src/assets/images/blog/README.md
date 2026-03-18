@@ -5,6 +5,7 @@ Place all blog post images in this directory.
 ## ⚠️ Important: Image Requirements
 
 **Your blog images MUST be:**
+
 - **Size:** 1200 × 675 pixels (16:9 aspect ratio)
 - **Format:** WebP (recommended) or JPG/PNG
 - **File Size:** Under 200KB
@@ -17,6 +18,7 @@ See full specifications: [BLOG_IMAGE_SPECIFICATIONS.md](../../../BLOG_IMAGE_SPEC
 ---
 
 ## Supported Formats
+
 - `.webp` (recommended for best performance)
 - `.jpg` / `.jpeg`
 - `.png`
@@ -38,21 +40,23 @@ src/assets/images/blog/
 
 ```markdown
 ---
-title: "Your Blog Post"
-image: "~/assets/images/blog/your-post-image.webp"
+title: 'Your Blog Post'
+image: '~/assets/images/blog/your-post-image.webp'
 ---
 ```
 
 ### ⚠️ Common Mistakes
 
 **Wrong:**
+
 ```markdown
-❌ image: ./src/assets/images/blog/image.webp  # Don't use ./
-❌ image: /assets/images/blog/image.webp       # Don't use absolute path
-❌ image: ~/src/assets/images/blog/image.webp  # Don't add /src/
+❌ image: ./src/assets/images/blog/image.webp # Don't use ./
+❌ image: /assets/images/blog/image.webp # Don't use absolute path
+❌ image: ~/src/assets/images/blog/image.webp # Don't add /src/
 ```
 
 **Correct:**
+
 ```markdown
 ✅ image: ~/assets/images/blog/image.webp
 ```
@@ -62,12 +66,14 @@ image: "~/assets/images/blog/your-post-image.webp"
 ## Quick Resize Guide
 
 ### Using Canva (Free)
+
 1. Go to [Canva.com](https://canva.com)
 2. Create design → Custom size → 1200 × 675 px
 3. Add your image
 4. Download → WebP format
 
 ### Using Online Tools
+
 - [Bulk Resize Photos](https://bulkresizephotos.com) - Batch resize
 - [Squoosh](https://squoosh.app) - Optimize and convert
 - [Adobe Express](https://adobe.com/express) - Quick resize
@@ -89,6 +95,7 @@ image: "~/assets/images/blog/your-post-image.webp"
 ### Image Not Showing
 
 **Check:**
+
 - [ ] Image file exists in `src/assets/images/blog/`
 - [ ] Path starts with `~/assets/images/blog/`
 - [ ] File extension matches (.webp, .jpg, etc.)
@@ -97,12 +104,14 @@ image: "~/assets/images/blog/your-post-image.webp"
 ### Image Looks Cropped
 
 **Solution:**
+
 - Resize image to 1200×675px (16:9 ratio)
 - Use online tools listed above
 
 ### Image Quality Poor
 
 **Solution:**
+
 - Use minimum 1200px width
 - Export at 80-100% quality
 - Check original resolution
@@ -115,9 +124,9 @@ image: "~/assets/images/blog/your-post-image.webp"
 ---
 publishDate: 2026-03-14
 author: Your Name
-title: "Your Blog Post Title"
-excerpt: "Brief description of your post"
-image: "~/assets/images/blog/your-image.webp"
+title: 'Your Blog Post Title'
+excerpt: 'Brief description of your post'
+image: '~/assets/images/blog/your-image.webp'
 category: Tutorials
 tags:
   - AI
@@ -133,4 +142,4 @@ Write your blog post content...
 
 ---
 
-*For detailed specifications, see [BLOG_IMAGE_SPECIFICATIONS.md](../../../BLOG_IMAGE_SPECIFICATIONS.md)*
+_For detailed specifications, see [BLOG_IMAGE_SPECIFICATIONS.md](../../../BLOG_IMAGE_SPECIFICATIONS.md)_

@@ -1,4 +1,23 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+interface FooterData {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
+  socialLinks: Array<Link>;
+  footNote: string;
+}
 
 export const headerData = {
   links: [
@@ -17,23 +36,27 @@ export const headerData = {
   ],
 };
 
-export const footerData = {
+export const footerData: FooterData = {
   links: [
     {
-      text: 'Home',
-      href: getPermalink('/'),
-    },
-    {
-      text: 'About',
-      href: getPermalink('/about'),
-    },
-    {
-      text: 'Blog',
-      href: getBlogPermalink(),
-    },
-    {
-      text: 'Contact',
-      href: getPermalink('/contact'),
+      links: [
+        {
+          text: 'Home',
+          href: getPermalink('/'),
+        },
+        {
+          text: 'About',
+          href: getPermalink('/about'),
+        },
+        {
+          text: 'Blog',
+          href: getBlogPermalink(),
+        },
+        {
+          text: 'Contact',
+          href: getPermalink('/contact'),
+        },
+      ],
     },
   ],
   secondaryLinks: [

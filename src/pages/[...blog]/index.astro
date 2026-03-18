@@ -25,7 +25,7 @@ const { post } = Astro.props as Props;
 
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
-const twitterImage = post.twitterImage ? (await findImage(post.twitterImage)) as ImageMetadata | string | undefined : image;
+const twitterImage = image;
 
 const metadata = merge(
   {
@@ -46,7 +46,12 @@ const metadata = merge(
       handle: '@localai67177',
       site: '@localai67177',
       ...(twitterImage
-        ? { image: typeof twitterImage === 'string' ? twitterImage : (twitterImage as ImageMetadata)?.src || String(twitterImage) }
+        ? {
+            image:
+              typeof twitterImage === 'string'
+                ? twitterImage
+                : (twitterImage as ImageMetadata)?.src || String(twitterImage),
+          }
         : {}),
     },
   },

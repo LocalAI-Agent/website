@@ -20,7 +20,10 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 <article
   class="mb-6 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
 >
-  <div class="relative rounded shadow-lg mb-6 overflow-hidden bg-gray-400 dark:bg-slate-700" style="aspect-ratio: 16/9;">
+  <div
+    class="relative rounded shadow-lg mb-6 overflow-hidden bg-gray-400 dark:bg-slate-700"
+    style="aspect-ratio: 16/9;"
+  >
     {
       image &&
         (link ? (

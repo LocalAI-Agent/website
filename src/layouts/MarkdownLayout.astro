@@ -38,81 +38,71 @@ function formatDate(date: string | Date | undefined): string {
     <!-- Blog Header -->
     <header class="mb-12">
       <!-- Category label -->
-      {frontmatter.category && (
-        <div class="text-blog-small font-semibold text-accent uppercase tracking-wide mb-4">
-          {frontmatter.category}
-        </div>
-      )}
-      
+      {
+        frontmatter.category && (
+          <div class="text-blog-small font-semibold text-accent uppercase tracking-wide mb-4">
+            {frontmatter.category}
+          </div>
+        )
+      }
+
       <!-- Title -->
       <h1 class="font-bold font-heading text-blog-title leading-tight text-text-heading">
         {frontmatter.title}
       </h1>
-      
+
       <!-- Excerpt -->
-      {frontmatter.excerpt && (
-        <p class="text-xl text-text-secondary mt-6 leading-relaxed">
-          {frontmatter.excerpt}
-        </p>
-      )}
-      
+      {frontmatter.excerpt && <p class="text-xl text-text-secondary mt-6 leading-relaxed">{frontmatter.excerpt}</p>}
+
       <!-- Meta Information -->
-      {(frontmatter.publishDate || frontmatter.author || frontmatter.readingTime) && (
-        <div class="flex flex-wrap items-center gap-3 mt-8 text-blog-small text-text-secondary">
-          {frontmatter.publishDate && (
-            <time datetime={String(frontmatter.publishDate)} class="font-medium">
-              {formatDate(frontmatter.publishDate)}
-            </time>
-          )}
-          {frontmatter.publishDate && frontmatter.author && (
-            <span class="text-text-light">•</span>
-          )}
-          {frontmatter.author && (
-            <span class="font-medium text-text-heading">{frontmatter.author}</span>
-          )}
-          {(frontmatter.publishDate || frontmatter.author) && frontmatter.readingTime && (
-            <span class="text-text-light">•</span>
-          )}
-          {frontmatter.readingTime && (
-            <span class="font-medium">{frontmatter.readingTime} min read</span>
-          )}
-          {frontmatter.updateDate && (
-            <>
+      {
+        (frontmatter.publishDate || frontmatter.author || frontmatter.readingTime) && (
+          <div class="flex flex-wrap items-center gap-3 mt-8 text-blog-small text-text-secondary">
+            {frontmatter.publishDate && (
+              <time datetime={String(frontmatter.publishDate)} class="font-medium">
+                {formatDate(frontmatter.publishDate)}
+              </time>
+            )}
+            {frontmatter.publishDate && frontmatter.author && <span class="text-text-light">•</span>}
+            {frontmatter.author && <span class="font-medium text-text-heading">{frontmatter.author}</span>}
+            {(frontmatter.publishDate || frontmatter.author) && frontmatter.readingTime && (
               <span class="text-text-light">•</span>
-              <span class="text-text-light">Updated {formatDate(frontmatter.updateDate)}</span>
-            </>
-          )}
-        </div>
-      )}
+            )}
+            {frontmatter.readingTime && <span class="font-medium">{frontmatter.readingTime} min read</span>}
+            {frontmatter.updateDate && (
+              <>
+                <span class="text-text-light">•</span>
+                <span class="text-text-light">Updated {formatDate(frontmatter.updateDate)}</span>
+              </>
+            )}
+          </div>
+        )
+      }
     </header>
-    
+
     <!-- Blog Content -->
-    <div
-      class="mx-auto prose prose-blog max-w-blog-content dark:prose-invert"
-    >
+    <div class="mx-auto prose prose-blog max-w-blog-content dark:prose-invert">
       <slot />
     </div>
-    
+
     <!-- Article Footer -->
     <footer class="mt-16 pt-8 border-t border-border">
       <!-- Tags -->
-      {frontmatter.tags && frontmatter.tags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-6">
-          {frontmatter.tags.map((tag: string) => (
-            <span
-              class="px-3 py-1 text-blog-small bg-code-bg text-text-secondary rounded-full hover:bg-border transition-colors cursor-pointer"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
-      
+      {
+        frontmatter.tags && frontmatter.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-6">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="px-3 py-1 text-blog-small bg-code-bg text-text-secondary rounded-full hover:bg-border transition-colors cursor-pointer">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+
       <!-- Share section -->
       <div class="flex items-center justify-between">
-        <p class="text-blog-small text-text-secondary">
-          Share this article
-        </p>
+        <p class="text-blog-small text-text-secondary">Share this article</p>
         <div class="flex gap-3">
           <!-- Social share buttons placeholder -->
         </div>

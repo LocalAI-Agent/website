@@ -39,15 +39,43 @@ const { language, textDirection } = I18N;
     <!-- Preload critical font to reduce key request chain -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/_astro/inter-latin-wght-normal.Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
-    
+
     <!-- Preload critical CSS inline to avoid render blocking -->
     <style>
-      /* Critical CSS for above-the-fold content */
-      html{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6}
-      body{margin:0;padding:0;min-height:100vh}
-      .bg-page{background-color:#fff}
-      .dark .bg-page{background-color:#0a0a0a}
-      img{max-width:100%;height:auto;display:block}
+      /* Critical CSS for above-the-fold content with CLS prevention */
+      html {
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        font-display: swap;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      .bg-page {
+        background-color: #fff;
+      }
+      .dark .bg-page {
+        background-color: #0a0a0a;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        content-visibility: auto;
+      }
+      /* Reserve space for hero images */
+      .hero-image-container {
+        aspect-ratio: 4/3;
+        min-height: 400px;
+        contain: layout;
+      }
+      /* Prevent layout shift for sections */
+      section[style*='min-height'] {
+        contain: layout style;
+      }
     </style>
 
     <!-- Load non-critical CSS asynchronously -->
@@ -62,7 +90,11 @@ const { language, textDirection } = I18N;
     <ClientRouter fallback="swap" />
 
     <!-- Writesonic SEO Fixer - Load asynchronously to avoid blocking LCP -->
-    <script src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js" id="wsAiSeoMb" type="application/javascript" defer></script>
+    <script
+      src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js"
+      id="wsAiSeoMb"
+      type="application/javascript"
+      defer></script>
     <script id="wsAiSeoInitScript" defer>
       // Initialize Writesonic SEO Fixer after DOM is ready
       if (document.readyState === 'loading') {
@@ -70,12 +102,12 @@ const { language, textDirection } = I18N;
       } else {
         initWritesonic();
       }
-      
+
       function initWritesonic() {
         if (typeof wsSEOfixer !== 'undefined') {
           wsSEOfixer.configure({
             hostURL: 'https://seo-fixer.writesonic.com',
-            siteID: '69b74f9a47f615e0a53978a7'
+            siteID: '69b74f9a47f615e0a53978a7',
           });
         }
       }

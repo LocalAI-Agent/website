@@ -213,6 +213,7 @@ export interface Form {
   disclaimer?: Disclaimer;
   button?: string;
   description?: string;
+  formAction?: string;
 }
 
 // WIDGETS
@@ -255,6 +256,7 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+  after?: string;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {

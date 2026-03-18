@@ -44,12 +44,12 @@ export const lazyImagesRehypePlugin: RehypePlugin = () => {
     visit(tree, 'element', function (node) {
       if (node.tagName === 'img') {
         node.properties.loading = 'lazy';
-        
+
         // Add decoding attribute for better performance
         if (!node.properties.decoding) {
           node.properties.decoding = 'async';
         }
-        
+
         // Add class for CLS prevention
         const existingClass = node.properties.class || '';
         node.properties.class = `${existingClass} cls-protected`.trim();
@@ -68,9 +68,9 @@ export const imageAspectRatioRehypePlugin: RehypePlugin = () => {
 
     visit(tree, 'element', function (node, index, parent) {
       if (node.tagName === 'img' && parent) {
-        const width = node.properties?.width;
-        const height = node.properties?.height;
-        
+        const width = node.properties?.width as number | undefined;
+        const height = node.properties?.height as number | undefined;
+
         // Calculate aspect ratio if dimensions are available
         let aspectRatioStyle = '';
         if (width && height) {

@@ -25,7 +25,8 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `LocalAI Agent Blog - Enterprise AI Insights & Tutorials${currentPage > 1 ? ` (Page ${currentPage})` : ''}`,
-  description: 'Read the latest articles about local AI deployment, enterprise AI infrastructure, LLM inference optimization, and AI agent development.',
+  description:
+    'Read the latest articles about local AI deployment, enterprise AI infrastructure, LLM inference optimization, and AI agent development.',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -38,19 +39,17 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-    >
-      The Blog
-    </Headline>
-    
+    <Headline> The Blog </Headline>
+
     <!-- Introduction Section for SEO -->
     <div class="max-w-3xl mx-auto mb-12 text-center">
       <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-        Welcome to the LocalAI Agent blog, your source for enterprise AI insights, tutorials, and best practices. 
-        Explore articles on local AI deployment, LLM inference optimization, AI agent development, and infrastructure management.
+        Welcome to the LocalAI Agent blog, your source for enterprise AI insights, tutorials, and best practices.
+        Explore articles on local AI deployment, LLM inference optimization, AI agent development, and infrastructure
+        management.
       </p>
     </div>
-    
+
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--

@@ -1,10 +1,10 @@
 ---
 publishDate: 2026-03-16
 author: Jiahao
-title: "How to Build Local AI Agents: A Privacy-First Guide"
-excerpt: "Learn how to build privacy-first AI agents that run entirely on your hardware."
-description: "Learn how to build local AI agents from scratch. Step-by-step guide covering Ollama setup, LangGraph, security, and production deployment."
-image: "~/assets/images/blog/local-ai-agents.webp"
+title: 'How to Build Local AI Agents: A Privacy-First Guide'
+excerpt: 'Learn how to build privacy-first AI agents that run entirely on your hardware.'
+description: 'Learn how to build local AI agents from scratch. Step-by-step guide covering Ollama setup, LangGraph, security, and production deployment.'
+image: '~/assets/images/blog/local-ai-agents.webp'
 
 keywords:
   - build local AI agents
@@ -109,6 +109,7 @@ After installation, Ollama runs in the background and serves an API at `http://l
 Start with 7B to 14B models if you've got 8-16GB VRAM. Good options include Llama 3.3 8B, Mistral Nemo, or Qwen 3.
 
 A few practical tips:
+
 - Mac users: grab models in GGUF format
 - Windows/Nvidia users: AWQ format is faster
 
@@ -219,8 +220,8 @@ Turn on verbose mode to see what's happening under the hood:
 
 ```python
 agent_executor = AgentExecutor(
-    agent=agent, 
-    tools=tools, 
+    agent=agent,
+    tools=tools,
     verbose=True  # Watch the reasoning unfold
 )
 ```
@@ -380,9 +381,9 @@ Data science for non-coders, local financial analysis, media processing with ffm
 
 ## Related Articles
 
-* [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
-* [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
-* [Ollama Official Documentation](https://ollama.com/docs) — Complete setup and configuration guide
-* [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Build multi-agent systems
-* [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents
-* [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — Enterprise AI governance
+- [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
+- [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
+- [Ollama Official Documentation](https://ollama.com/docs) — Complete setup and configuration guide
+- [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — Build multi-agent systems
+- [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — Enterprise AI governance

@@ -2,9 +2,9 @@
 publishDate: 2026-03-18
 author: Jiahao
 title: "How Does OpenClaw Work? A Beginner's Guide"
-excerpt: "Explain in detail how openclaw work."
-description: "OpenClaw: autonomous AI agents that run locally on your infrastructure. Learn about multi-platform messaging integration, persistent memory, skills ecosystem, and model-agnostic architecture."
-image: "~/assets/images/blog/openclaw.webp"
+excerpt: 'Explain in detail how openclaw work.'
+description: 'OpenClaw: autonomous AI agents that run locally on your infrastructure. Learn about multi-platform messaging integration, persistent memory, skills ecosystem, and model-agnostic architecture.'
+image: '~/assets/images/blog/openclaw.webp'
 
 keywords:
   - OpenClaw AI agent
@@ -34,6 +34,7 @@ OpenClaw is an autonomous AI agent that runs on your own hardware—Windows, Mac
 Unlike cloud-based chatbots, OpenClaw keeps everything local. Your data, API keys, and what the agent does all stay on your machine. No third parties, no mysterious servers in who-knows-where.
 
 **Key Takeaways**
+
 - **Local Control & Privacy:** Runs on your infrastructure (Windows, macOS, Linux), keeping data and API keys under your control—no cloud dependencies.
 - **Multi-Platform Integration:** Connects to WhatsApp, Telegram, Discord, Slack, Teams, iMessage, and Signal through a unified WebSocket gateway.
 - **Autonomous Task Execution:** Actually performs operations—runs shell commands, manages files, controls browsers, executes scripts—not just generating text.
@@ -64,8 +65,9 @@ The architecture breaks down into four layers: communication, state management, 
 The Gateway is a WebSocket server on port 18789 (default). It's the control plane for everything messaging-related.
 
 Channel adapters handle the messy work of connecting to different platforms:
+
 - WhatsApp uses Baileys
-- Telegram uses grammY  
+- Telegram uses grammY
 - Discord uses discord.js
 
 Each platform has its own auth method. WhatsApp wants a QR code scan. Telegram and Discord need bot tokens. Credentials get stored locally—your tokens, your problem.
@@ -81,6 +83,7 @@ Session keys decide who you're talking to. The **dmScope** setting controls how 
 - **per-account-channel-peer** — adds account separation on top
 
 Memory lives as Markdown files in your workspace:
+
 - **MEMORY.md** — long-term facts about you
 - **memory/YYYY-MM-DD.md** — daily notes
 
@@ -89,6 +92,7 @@ When you need the agent to remember something specific, **memory_search** uses v
 ### Provider and Model Configuration
 
 You pick your model with **provider/model** format. Authenticate with API keys or OAuth. OpenClaw plays nice with:
+
 - Anthropic (Claude)
 - OpenAI (GPT)
 - Google Gemini
@@ -99,6 +103,7 @@ For custom providers, define **baseUrl**, **apiKey**, and **model** in **models.
 ### Plugins and Tool Execution
 
 Native plugins are TypeScript modules loaded at runtime via jiti. They register:
+
 - Text inference providers
 - Channel connectors
 - Agent tools
@@ -110,12 +115,14 @@ The plugin system works in phases: manifest discovery → enablement validation 
 Skills are reusable packages that let the agent do specific things—fetching weather, deploying code, managing your calendar—without you building everything from scratch.
 
 A skill is just a directory with:
+
 - **SKILL.md** — YAML frontmatter + instructions
 - Optional scripts or reference files
 
 ClawHub has over 2,857 skills available: coding, writing, data analytics, DevOps, AI/ML, community tools, productivity workflows. Install one with a single CLI command, and it automatically links into your workspace.
 
 Three places skills get loaded from, in order of priority:
+
 1. Workspace skills (your custom ones)
 2. **~/.openclaw/skills** (locally managed)
 3. Bundled skills (shipped with installation)
@@ -125,6 +132,7 @@ Workspace skills override anything else with the same name—so you can customiz
 With skills, OpenClaw integrates into WhatsApp, Slack, IDEs, servers—whatever you need. It can handle calendar invites, process emails, monitor servers, write code. The agent remembers context over time and runs things in the background while you focus on something else.
 
 ## FAQs
+
 **Q1. What exactly does OpenClaw do that makes it different from regular chatbots?** OpenClaw is an autonomous AI agent that runs locally on your computer and can perform actual tasks rather than just generating text responses. It can execute shell commands, manage files, browse the web, control applications, and maintain persistent memory of your conversations and preferences. Unlike browser-based assistants, it has full system access and can proactively work on tasks even when you're not actively chatting with it.
 
 **Q2. Do I need expensive hardware like a GPU to run OpenClaw?** No, you don't need a dedicated GPU to run OpenClaw. The platform works on standard computers including Windows PCs, Macs, and Linux machines. While GPUs can speed up AI processing, modern systems with sufficient RAM can handle OpenClaw efficiently. You can run it on an old laptop, a Mac Mini, or even an affordable cloud VPS for as little as $5-10 per month.
@@ -137,9 +145,9 @@ With skills, OpenClaw integrates into WhatsApp, Slack, IDEs, servers—whatever 
 
 ## Related Articles
 
-* [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Build your own privacy-first AI agents from scratch
-* [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
-* [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
-* [OpenClaw Official Documentation](https://docs.openclaw.ai/) — Complete setup and configuration guide
-* [ClawHub Skills Registry](https://clawhub.dev/) — Download 10,000+ AI agent skills
-* [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents
+- [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Build your own privacy-first AI agents from scratch
+- [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Compare MCP with traditional function calling approaches
+- [vLLM vs SGLang: Enterprise LLM Inference Comparison](/blog/vllm-sglang) — Optimize your local AI inference engine
+- [OpenClaw Official Documentation](https://docs.openclaw.ai/) — Complete setup and configuration guide
+- [ClawHub Skills Registry](https://clawhub.dev/) — Download 10,000+ AI agent skills
+- [Anthropic AI Safety Guidelines](https://www.anthropic.com/ai-safety) — Security best practices for AI agents

@@ -26,7 +26,6 @@ export interface Props {
   actions?: Array<CallToAction>;
   isSticky?: boolean;
   isDark?: boolean;
-  isFullWidth?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   position?: string;
@@ -38,7 +37,6 @@ const {
   actions = [],
   isSticky = false,
   isDark = false,
-  isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
   position = 'center',
@@ -69,7 +67,10 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
     style="min-height: 56px;"
   >
-    <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']} style="min-height: 48px;">
+    <div
+      class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}
+      style="min-height: 48px;"
+    >
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>

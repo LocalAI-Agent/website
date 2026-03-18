@@ -38,15 +38,15 @@
 
 ## 🏗️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Framework** | [Astro 5.0](https://astro.build/) |
-| **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com/) |
-| **Language** | TypeScript 5.8 |
-| **Content** | MDX (Markdown + JSX) |
-| **Icons** | Astro Icon (Tabler + Flat Color Icons) |
-| **Images** | Astro Assets + Unpic |
-| **Deployment** | Static (SSG) |
+| Layer          | Technology                                   |
+| -------------- | -------------------------------------------- |
+| **Framework**  | [Astro 5.0](https://astro.build/)            |
+| **Styling**    | [Tailwind CSS 3.4](https://tailwindcss.com/) |
+| **Language**   | TypeScript 5.8                               |
+| **Content**    | MDX (Markdown + JSX)                         |
+| **Icons**      | Astro Icon (Tabler + Flat Color Icons)       |
+| **Images**     | Astro Assets + Unpic                         |
+| **Deployment** | Static (SSG)                                 |
 
 ---
 
@@ -169,14 +169,14 @@ Visit [http://localhost:4321](http://localhost:4321)
 
 ## 📜 Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run check` | Run all checks (Astro + ESLint + Prettier) |
-| `npm run fix` | Auto-fix ESLint and Prettier issues |
-| `npm run astro ...` | Run Astro CLI commands |
+| Command             | Description                                |
+| ------------------- | ------------------------------------------ |
+| `npm run dev`       | Start dev server at `localhost:4321`       |
+| `npm run build`     | Build production site to `./dist/`         |
+| `npm run preview`   | Preview production build locally           |
+| `npm run check`     | Run all checks (Astro + ESLint + Prettier) |
+| `npm run fix`       | Auto-fix ESLint and Prettier issues        |
+| `npm run astro ...` | Run Astro CLI commands                     |
 
 ---
 
@@ -195,11 +195,11 @@ metadata:
   title:
     default: LocalAI Agent
     template: '%s — LocalAI Agent'
-  description: "Enterprise AI Infrastructure Solutions"
+  description: 'Enterprise AI Infrastructure Solutions'
   # ... more SEO settings
 
 ui:
-  theme: 'system'  # "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'system' # "system" | "light" | "dark" | "light:only" | "dark:only"
 ```
 
 ### Navigation (`src/navigation.ts`)
@@ -244,20 +244,22 @@ Customize colors, fonts, and mode-specific styles:
 ### Color Palette
 
 #### Light Mode — "Clean AI Lab"
-| Token | Value | Usage |
-|-------|-------|-------|
+
+| Token                | Value              | Usage           |
+| -------------------- | ------------------ | --------------- |
 | `--aw-color-bg-page` | `rgb(248 250 252)` | Page background |
 | `--aw-color-bg-card` | `rgb(248 250 252)` | Card background |
-| `--aw-color-primary` | `rgb(1 97 239)` | Primary actions |
-| `--aw-color-accent` | `rgb(109 40 217)` | Accent elements |
+| `--aw-color-primary` | `rgb(1 97 239)`    | Primary actions |
+| `--aw-color-accent`  | `rgb(109 40 217)`  | Accent elements |
 
 #### Dark Mode — "Deep AI Space"
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--aw-color-bg-page` | `rgb(2 6 23)` | Page background |
-| `--aw-color-bg-card` | `rgb(2 6 23)` | Card background |
-| `--aw-color-primary` | `rgb(1 97 239)` | Primary actions |
-| `--aw-color-accent` | `rgb(109 40 217)` | Accent elements |
+
+| Token                | Value             | Usage           |
+| -------------------- | ----------------- | --------------- |
+| `--aw-color-bg-page` | `rgb(2 6 23)`     | Page background |
+| `--aw-color-bg-card` | `rgb(2 6 23)`     | Card background |
+| `--aw-color-primary` | `rgb(1 97 239)`   | Primary actions |
+| `--aw-color-accent`  | `rgb(109 40 217)` | Accent elements |
 
 ### Visual Effects
 
@@ -271,14 +273,16 @@ Customize colors, fonts, and mode-specific styles:
 ```html
 <!-- Page backgrounds -->
 <div class="bg-page dark:bg-dark">
-<div class="bg-gradient-page dark:bg-gradient-page-dark">
-
-<!-- Cards (match mode background) -->
-<div class="bg-card dark:bg-card-dark">
-<div class="bg-card/50 dark:bg-card-dark/50 backdrop-blur-sm">
-
-<!-- Glow layers -->
-<div class="glow-primary dark:glow-primary-dark">
+  <div class="bg-gradient-page dark:bg-gradient-page-dark">
+    <!-- Cards (match mode background) -->
+    <div class="bg-card dark:bg-card-dark">
+      <div class="bg-card/50 dark:bg-card-dark/50 backdrop-blur-sm">
+        <!-- Glow layers -->
+        <div class="glow-primary dark:glow-primary-dark"></div>
+      </div>
+    </div>
+  </div>
+</div>
 ```
 
 ---
@@ -292,8 +296,8 @@ Create new posts in `src/data/post/`:
 ```markdown
 ---
 publishDate: 2026-03-14
-title: "Your Post Title"
-excerpt: "Brief summary of your post"
+title: 'Your Post Title'
+excerpt: 'Brief summary of your post'
 image: ./path/to/image.webp
 category: tutorials
 tags: [astro, tailwind, ai]
@@ -353,6 +357,7 @@ netlify deploy --prod
 ### Deploy Anywhere
 
 The `dist/` folder contains static files ready for any hosting service:
+
 - Vercel
 - Netlify
 - Cloudflare Pages
@@ -418,15 +423,15 @@ const { title = '', isDark = false } = Astro.props;
 
 ## 📊 Performance Goals
 
-| Metric | Target | Status |
-|--------|--------|--------|
-| Lighthouse Performance | 100 | ✅ |
-| Lighthouse Accessibility | 100 | ✅ |
-| Lighthouse Best Practices | 100 | ✅ |
-| Lighthouse SEO | 100 | ✅ |
-| First Contentful Paint | < 1.0s | ✅ |
-| Largest Contentful Paint | < 2.5s | ✅ |
-| Cumulative Layout Shift | < 0.1 | ✅ |
+| Metric                    | Target | Status |
+| ------------------------- | ------ | ------ |
+| Lighthouse Performance    | 100    | ✅     |
+| Lighthouse Accessibility  | 100    | ✅     |
+| Lighthouse Best Practices | 100    | ✅     |
+| Lighthouse SEO            | 100    | ✅     |
+| First Contentful Paint    | < 1.0s | ✅     |
+| Largest Contentful Paint  | < 2.5s | ✅     |
+| Cumulative Layout Shift   | < 0.1  | ✅     |
 
 ---
 
@@ -487,4 +492,4 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE.m
 
 ---
 
-*Last updated: March 14, 2026*
+_Last updated: March 14, 2026_

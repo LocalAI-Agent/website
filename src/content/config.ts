@@ -66,21 +66,21 @@ const postCollection = defineCollection({
     author: z.string().optional(),
 
     // SEO 增强字段
-    keywords: z.array(z.string()).optional(),        // 目标关键词
-    readingTime: z.number().optional(),              // 阅读时间（分钟）
-    
+    keywords: z.array(z.string()).optional(), // 目标关键词
+    readingTime: z.number().optional(), // 阅读时间（分钟）
+
     // 社交分享优化
-    twitterImage: z.string().optional(),             // Twitter 专用图片
-    ogImage: z.string().optional(),                  // OpenGraph 专用图片
-    
+    twitterImage: z.string().optional(), // Twitter 专用图片
+    ogImage: z.string().optional(), // OpenGraph 专用图片
+
     // 流量增长字段
-    featured: z.boolean().optional(),                // 是否精选文章
-    trending: z.boolean().optional(),                // 是否 trending
-    priority: z.number().min(0).max(1).optional(),   // URL 优先级 (0-1)
-    
+    featured: z.boolean().optional(), // 是否精选文章
+    trending: z.boolean().optional(), // 是否 trending
+    priority: z.number().min(0).max(1).optional(), // URL 优先级 (0-1)
+
     // 内部链接
-    relatedPosts: z.array(z.string()).optional(),    // 相关文章 slug
-    
+    relatedPosts: z.array(z.string()).optional(), // 相关文章 slug
+
     metadata: metadataDefinition(),
   }),
 });

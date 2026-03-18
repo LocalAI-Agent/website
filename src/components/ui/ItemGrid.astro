@@ -40,7 +40,7 @@ const {
               <div class="mb-4">
                 <Image
                   src={image.src}
-                  alt={image.alt || title}
+                  alt={image.alt || title || ''}
                   class="rounded-lg shadow-lg w-full object-cover"
                   width={image.width || 400}
                   height={image.height || 250}

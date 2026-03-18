@@ -9,7 +9,6 @@ import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
 import { adaptOpenGraphImages, findImage } from '~/utils/images';
-import type { ImageMetadata } from 'astro';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -31,10 +30,10 @@ const defaultImage = getCanonical('/_astro/icon.webp');
 // Helper function to adapt Twitter card image and return the resolved image URL
 async function resolveTwitterImage(twitterCard: typeof twitter = {}, site?: URL): Promise<string | undefined> {
   if (!site || !twitterCard?.image) return undefined;
-  
+
   const resolvedImage = await findImage(twitterCard.image);
   if (!resolvedImage) return undefined;
-  
+
   if (typeof resolvedImage === 'string') {
     // External URL or absolute path
     if (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) {
@@ -45,46 +44,33 @@ async function resolveTwitterImage(twitterCard: typeof twitter = {}, site?: URL)
     }
     return resolvedImage;
   }
-  
+
   if (typeof resolvedImage === 'object' && 'src' in resolvedImage) {
     // Astro ImageMetadata - create optimized URL
     return new URL(resolvedImage.src, site).toString();
   }
-  
+
   return undefined;
 }
 
 // Helper function to adapt Twitter card (for other properties)
 async function adaptTwitterCard(twitterCard: typeof twitter = {}, site?: URL) {
   if (!site) return twitterCard;
-  
+
   const result = { ...twitterCard };
-  
-  // Handle 'images' array (like OpenGraph)
-  if (result.images?.length) {
-    const images = result.images.map((image) => {
-      if (typeof image === 'string') {
-        try {
-          return new URL(image, site).toString();
-        } catch {
-          return image;
-        }
-      }
-      if (typeof image.url === 'string') {
-        try {
-          return { ...image, url: new URL(image.url, site).toString() };
-        } catch {
-          return image;
-        }
-      }
-      return image;
-    });
-    result.images = images;
+
+  // Handle 'image' property
+  if (result.image) {
+    try {
+      result.image = new URL(result.image, site).toString();
+    } catch {
+      // Keep original if invalid URL
+    }
   }
-  
+
   // Remove 'image' property since we'll handle it separately
   delete result.image;
-  
+
   return result;
 }
 
@@ -130,7 +116,7 @@ const seoProps: AstroSeoProps = merge(
     description: description,
     openGraph: {
       url: canonical,
-      ...openGraph
+      ...openGraph,
     },
     twitter: {
       ...twitter,
@@ -146,5 +132,11 @@ const seoProps: AstroSeoProps = merge(
 const twitterImageUrl = await resolveTwitterImage(seoProps.twitter, Astro.site);
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site), twitter: await adaptTwitterCard(seoProps?.twitter, Astro.site) }} />
+<AstroSeo
+  {...{
+    ...seoProps,
+    openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site),
+    twitter: await adaptTwitterCard(seoProps?.twitter, Astro.site),
+  }}
+/>
 {twitterImageUrl && <meta name="twitter:image" content={twitterImageUrl} />}

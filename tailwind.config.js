@@ -104,22 +104,22 @@ export default {
         'blog-small': ['14px', { lineHeight: '1.5' }],
       },
       fontWeight: {
-        'body': '400',
-        'h1': '700',
-        'h2': '600',
-        'h3': '600',
-        'h4': '500',
-        'h5': '500',
-        'h6': '500',
+        body: '400',
+        h1: '700',
+        h2: '600',
+        h3: '600',
+        h4: '500',
+        h5: '500',
+        h6: '500',
       },
       maxWidth: {
         'blog-content': '700px',
         'blog-prose': '4xl',
       },
       spacing: {
-        'paragraph': '16px',
-        'heading': '24px',
-        'section': '48px',
+        paragraph: '16px',
+        heading: '24px',
+        section: '48px',
       },
 
       animation: {
@@ -138,7 +138,7 @@ export default {
     typographyPlugin,
     plugin(({ addVariant, addUtilities, theme }) => {
       addVariant('intersect', '&:not([no-intersect])');
-      
+
       // Blog typography utilities
       addUtilities({
         '.prose-blog': {
@@ -296,7 +296,7 @@ export default {
             color: 'var(--aw-color-accent)',
           },
         },
-        
+
         // Meta information
         '.blog-meta': {
           fontSize: theme('fontSize.blog-small')[0],

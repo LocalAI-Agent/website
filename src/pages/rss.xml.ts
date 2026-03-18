@@ -16,7 +16,7 @@ export const GET = async () => {
 
   const rss = await getRssString({
     title: `${SITE.name} Blog`,
-    subtitle: METADATA?.description || 'Enterprise Local AI Infrastructure & AI Agents',
+    // subtitle: METADATA?.description || 'Enterprise Local AI Infrastructure & AI Agents',
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
 
@@ -31,7 +31,7 @@ export const GET = async () => {
     })),
 
     trailingSlash: SITE.trailingSlash,
-    
+
     // Add atom:self link for RSS validation
     xmlns: {
       atom: 'http://www.w3.org/2005/Atom',
