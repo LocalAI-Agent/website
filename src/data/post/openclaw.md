@@ -1,13 +1,12 @@
 ---
-publishDate: 2026-03-16
+publishDate: 2026-03-18
 author: Jiahao
 title: "How Does OpenClaw Work? A Beginner's Guide"
-excerpt: "Learn how to build privacy-first AI agents that run entirely on your hardware."
-description: "Complete guide to OpenClaw: autonomous AI agents that run locally on your infrastructure. Learn about multi-platform messaging integration, persistent memory, skills ecosystem, and model-agnostic architecture."
+excerpt: "Explain in detail how openclaw work."
+description: "OpenClaw: autonomous AI agents that run locally on your infrastructure. Learn about multi-platform messaging integration, persistent memory, skills ecosystem, and model-agnostic architecture."
 image: "~/assets/images/blog/openclaw.webp"
 
 keywords:
-  - OpenClaw tutorial
   - OpenClaw AI agent
   - local AI agents
   - privacy-first AI
