@@ -3,9 +3,7 @@ import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
-// import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
@@ -19,9 +17,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
-
-// const allCategories = await findCategories();
-// const allTags = await findTags();
 
 const metadata = {
   title: `LocalAI Agent Blog - Enterprise AI Insights & Tutorials${currentPage > 1 ? ` (Page ${currentPage})` : ''}`,
@@ -38,23 +33,101 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline> The Blog </Headline>
+  <style is:global>
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-    <!-- Introduction Section for SEO -->
-    <div class="max-w-3xl mx-auto mb-12 text-center">
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-        Welcome to the LocalAI Agent blog, your source for enterprise AI insights, tutorials, and best practices.
-        Explore articles on local AI deployment, LLM inference optimization, AI agent development, and infrastructure
-        management.
-      </p>
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient 3s ease infinite;
+    }
+  </style>
+
+  <!-- Hero Section -->
+  <section
+    class="relative py-20 md:py-28 overflow-hidden bg-page dark:bg-dark"
+    style="min-height: 600px; contain: layout style;"
+  >
+    <!-- Enhanced Background - Ceramic White to White gradient -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-ceramic via-white to-ceramic dark:from-obsidian dark:via-gray-950 dark:to-obsidian animate-gradient-slow"
+      style="background-size: 200% 200%;"
+    >
     </div>
 
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
+    <!-- Cyber glow lines - Dark mode data flow -->
+    <div class="absolute inset-0 cyber-lines opacity-30 dark:opacity-60"></div>
+
+    <!-- Decorative floating orbs with fresnel effect -->
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-klein/20 to-electric-cyan/20 rounded-full blur-3xl animate-float fresnel-light"
+    >
+    </div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-klein/20 rounded-full blur-3xl animate-float-delayed fresnel-light"
+    >
+    </div>
+
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl mx-auto text-center" style="contain: layout;">
+        <p class="text-base text-klein dark:text-electric-cyan font-bold tracking-widest uppercase mb-4 animate-fade">
+          Enterprise AI Insights
+        </p>
+        <h1
+          class="text-5xl md:text-7xl font-bold leading-tighter tracking-tight mb-6 text-charcoal dark:text-white"
+          style="letter-spacing: -0.022em;"
+        >
+          The Blog
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-secondary dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
+          style="line-height: 1.5;"
+        >
+          Welcome to the LocalAI Agent blog, your source for enterprise AI insights, tutorials, and best practices.
+          Explore articles on local AI deployment, LLM inference optimization, AI agent development, and infrastructure
+          management.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="relative py-16 md:py-24 overflow-hidden bg-page dark:bg-dark noise-texture">
+    <!-- Enhanced Background -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-ceramic/80 via-white/50 to-ceramic/80 dark:from-obsidian/80 dark:via-gray-950/50 dark:to-obsidian/80"
+    >
+    </div>
+
+    <!-- Grid pattern overlay -->
+    <div
+      class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+      style="background-image: linear-gradient(#007AFF 1px, transparent 1px), linear-gradient(90deg, #007AFF 1px, transparent 1px); background-size: 60px 60px;"
+    >
+    </div>
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-klein/15 to-electric-cyan/15 rounded-full blur-xl animate-float neon-glow"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-10 w-20 h-20 bg-gradient-to-tr from-purple-500/15 to-klein/15 rounded-full blur-xl animate-float-delayed neon-glow-blue"
+    >
+    </div>
+
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <BlogList posts={page.data} />
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </div>
   </section>
 </Layout>

@@ -1,7 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
-import Button from '~/components/ui/Button.astro';
 
 export interface Props {
   prevUrl?: string;
@@ -15,21 +14,33 @@ const { prevUrl, nextUrl, prevText = 'Newer posts', nextText = 'Older posts' } =
 
 {
   (prevUrl || nextUrl) && (
-    <div class="container flex">
-      <div class="flex flex-row mx-auto container justify-between">
-        <Button
-          variant="tertiary"
-          class={`md:px-3 px-3 mr-2 ${!prevUrl ? 'invisible' : ''}`}
-          href={getPermalink(prevUrl)}
-        >
-          <Icon name="tabler:chevron-left" class="w-6 h-6" />
-          <p class="ml-2">{prevText}</p>
-        </Button>
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div class="flex flex-row mx-auto max-w-4xl justify-between items-center">
+        {prevUrl ? (
+          <a
+            href={getPermalink(prevUrl)}
+            class="group inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg text-charcoal dark:text-white bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border hover:bg-white dark:hover:bg-gray-700 hover:border-klein dark:hover:border-electric-cyan transition-all duration-300 shadow-soft hover:shadow-md hover:-translate-y-0.5"
+            style="border-radius: 8px;"
+          >
+            <Icon name="tabler:chevron-left" class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+            <span>{prevText}</span>
+          </a>
+        ) : (
+          <div />
+        )}
 
-        <Button variant="tertiary" class={`md:px-3 px-3 ${!nextUrl ? 'invisible' : ''}`} href={getPermalink(nextUrl)}>
-          <span class="mr-2">{nextText}</span>
-          <Icon name="tabler:chevron-right" class="w-6 h-6" />
-        </Button>
+        {nextUrl ? (
+          <a
+            href={getPermalink(nextUrl)}
+            class="group inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg text-white bg-klein hover:bg-blue-700 transition-all duration-300 shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5"
+            style="border-radius: 8px;"
+          >
+            <span>{nextText}</span>
+            <Icon name="tabler:chevron-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </a>
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   )

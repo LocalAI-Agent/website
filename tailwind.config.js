@@ -106,7 +106,7 @@ export default {
         // Deep Blue gradient
         'deep-blue': '#4FACFE',
         // Ceramic White background
-        'ceramic': '#FAFAFA',
+        ceramic: '#FAFAFA',
         // Obsidian Black for dark mode
         obsidian: '#050505',
         // Deep Charcoal text
@@ -161,8 +161,10 @@ export default {
         // Deep shadow for dark mode
         deep: '0 8px 40px rgba(0, 0, 0, 0.12)',
         // Neon glow
-        'neon-cyan': '0 0 10px rgba(0, 242, 254, 0.5), 0 0 20px rgba(0, 242, 254, 0.3), 0 0 30px rgba(0, 242, 254, 0.2)',
-        'neon-blue': '0 0 10px rgba(0, 122, 255, 0.5), 0 0 20px rgba(0, 122, 255, 0.3), 0 0 30px rgba(0, 122, 255, 0.2)',
+        'neon-cyan':
+          '0 0 10px rgba(0, 242, 254, 0.5), 0 0 20px rgba(0, 242, 254, 0.3), 0 0 30px rgba(0, 242, 254, 0.2)',
+        'neon-blue':
+          '0 0 10px rgba(0, 122, 255, 0.5), 0 0 20px rgba(0, 122, 255, 0.3), 0 0 30px rgba(0, 122, 255, 0.2)',
       },
       letterSpacing: {
         // Tight heading tracking - -0.022em

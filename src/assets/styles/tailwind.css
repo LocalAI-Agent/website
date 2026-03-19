@@ -419,38 +419,38 @@ a[role='button'],
   --aw-font-weight-code: 400;
 
   /* Colors - Light Mode (Ceramic White #FAFAFA, Deep Charcoal #1D1D1F, Klein Blue #007AFF) */
-  --aw-color-text-body: #1D1D1F;
-  --aw-color-text-heading: #1D1D1F;
-  --aw-color-text-link: #007AFF;
-  --aw-color-text-secondary: #86868B;
-  --aw-color-text-light: #A1A1A6;
-  --aw-color-text-muted: #86868B;
-  --aw-color-code-bg: #F5F5F7;
+  --aw-color-text-body: #1d1d1f;
+  --aw-color-text-heading: #1d1d1f;
+  --aw-color-text-link: #007aff;
+  --aw-color-text-secondary: #86868b;
+  --aw-color-text-light: #a1a1a6;
+  --aw-color-text-muted: #86868b;
+  --aw-color-code-bg: #f5f5f7;
   --aw-color-blockquote: #404040;
-  --aw-color-border: #E5E5E7;
-  --aw-color-accent: #007AFF;
-  --aw-color-primary: #007AFF;
-  --aw-color-bg-page: #FAFAFA;
-  --aw-color-bg-card: #FAFAFA;
-  --aw-color-bg-alt: #FFFFFF;
+  --aw-color-border: #e5e5e7;
+  --aw-color-accent: #007aff;
+  --aw-color-primary: #007aff;
+  --aw-color-bg-page: #fafafa;
+  --aw-color-bg-card: #fafafa;
+  --aw-color-bg-alt: #ffffff;
 }
 
 /* Dark Mode (Obsidian Black #050505, White #F5F5F7, Electric Cyan Gradient) */
 .dark {
-  --aw-color-text-body: #F5F5F7;
-  --aw-color-text-heading: #FFFFFF;
-  --aw-color-text-link: #00F2FE;
-  --aw-color-text-secondary: #86868B;
-  --aw-color-text-light: #6E6E73;
-  --aw-color-text-muted: #6E6E73;
-  --aw-color-code-bg: #1C1C1E;
-  --aw-color-blockquote: #A1A1A6;
-  --aw-color-border: #38383A;
-  --aw-color-accent: #00F2FE;
-  --aw-color-primary: #007AFF;
+  --aw-color-text-body: #f5f5f7;
+  --aw-color-text-heading: #ffffff;
+  --aw-color-text-link: #00f2fe;
+  --aw-color-text-secondary: #86868b;
+  --aw-color-text-light: #6e6e73;
+  --aw-color-text-muted: #6e6e73;
+  --aw-color-code-bg: #1c1c1e;
+  --aw-color-blockquote: #a1a1a6;
+  --aw-color-border: #38383a;
+  --aw-color-accent: #00f2fe;
+  --aw-color-primary: #007aff;
   --aw-color-bg-page: #050505;
   --aw-color-bg-card: #050505;
-  --aw-color-bg-alt: #0A0A0A;
+  --aw-color-bg-alt: #0a0a0a;
 }
 
 @layer utilities {
@@ -524,19 +524,19 @@ a[role='button'],
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+    @apply inline-flex items-center justify-center font-medium text-center text-base leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-2 focus:ring-offset-2 cursor-pointer;
   }
 
   .btn-primary {
-    @apply btn font-semibold bg-primary text-white border-primary hover:bg-secondary hover:border-secondary hover:text-white dark:text-white dark:bg-primary dark:border-primary dark:hover:border-secondary dark:hover:bg-secondary;
+    @apply btn rounded-lg font-semibold bg-klein text-white border border-klein hover:bg-blue-700 hover:border-blue-700 hover:text-white shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5 focus:ring-klein focus:ring-offset-white dark:focus:ring-offset-gray-900 dark:text-white dark:bg-klein dark:border-klein dark:hover:bg-blue-700 dark:hover:border-blue-700 dark:hover:shadow-neon-blue;
   }
 
   .btn-secondary {
-    @apply btn;
+    @apply btn rounded-lg bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border text-charcoal dark:text-white hover:bg-white dark:hover:bg-gray-700 hover:border-klein dark:hover:border-electric-cyan shadow-soft hover:shadow-md hover:-translate-y-0.5 focus:ring-klein focus:ring-offset-white dark:focus:ring-offset-gray-900;
   }
 
   .btn-tertiary {
-    @apply btn border-none shadow-none text-muted hover:text-gray-900 dark:text-gray-400 dark:hover:text-white;
+    @apply btn rounded-lg border-none shadow-none text-secondary hover:text-klein dark:text-gray-400 dark:hover:text-electric-cyan bg-transparent hover:bg-klein/5 dark:hover:bg-electric-cyan/5;
   }
 }
 
@@ -646,21 +646,21 @@ a[role='button'],
 
   /* Fresnel Reflection Effect - Light Mode */
   .fresnel-light {
-    box-shadow: 
+    box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.9),
       inset 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
 
   /* Neon Glow Effect - Dark Mode */
   .neon-glow {
-    box-shadow: 
+    box-shadow:
       0 0 10px rgba(0, 242, 254, 0.5),
       0 0 20px rgba(0, 242, 254, 0.3),
       0 0 30px rgba(0, 242, 254, 0.2);
   }
 
   .neon-glow-blue {
-    box-shadow: 
+    box-shadow:
       0 0 10px rgba(0, 122, 255, 0.5),
       0 0 20px rgba(0, 122, 255, 0.3),
       0 0 30px rgba(0, 122, 255, 0.2);
@@ -679,8 +679,10 @@ a[role='button'],
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -725,19 +727,14 @@ a[role='button'],
   }
 
   .cyber-lines {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(0, 242, 254, 0.1) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 242, 254, 0.1) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: cyber-flow 8s ease infinite;
   }
 
   /* Gradient Text - Klein Blue to Electric Cyan */
   .gradient-text-primary {
-    background: linear-gradient(135deg, #007AFF 0%, #00F2FE 100%);
+    background: linear-gradient(135deg, #007aff 0%, #00f2fe 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -766,18 +763,20 @@ a[role='button'],
   .btn-klein {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-lg transition-all duration-300;
     border-radius: 8px;
-    background: #007AFF;
+    background: #007aff;
     color: white;
   }
 
   .btn-klein:hover {
-    background: #0066D6;
+    background: #0066d6;
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4);
   }
 
   .dark .btn-klein:hover {
-    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.5), 0 0 20px rgba(0, 242, 254, 0.3);
+    box-shadow:
+      0 8px 24px rgba(0, 122, 255, 0.5),
+      0 0 20px rgba(0, 242, 254, 0.3);
   }
 
   /* Container Max Width - 1440px */
@@ -796,19 +795,19 @@ a[role='button'],
 
   /* Light Mode - High Brightness Negative Space */
   .negative-space-light {
-    background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
   }
 
   /* Dark Mode - Deep Shadows */
   .deep-shadow-dark {
-    box-shadow: 
+    box-shadow:
       0 20px 60px rgba(0, 0, 0, 0.8),
       0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 
   /* Emissive Component - Glowing Edge */
   .emissive-edge {
-    box-shadow: 
+    box-shadow:
       0 0 1px rgba(0, 242, 254, 0.8),
       0 0 8px rgba(0, 242, 254, 0.4),
       inset 0 0 8px rgba(0, 242, 254, 0.1);
@@ -833,7 +832,7 @@ a[role='button'],
   }
 
   .nav-hover-neon:hover {
-    text-shadow: 
+    text-shadow:
       0 0 10px rgba(0, 242, 254, 0.8),
       0 0 20px rgba(0, 242, 254, 0.6);
   }

@@ -2,13 +2,7 @@
 // This service worker provides basic caching for offline support
 
 const CACHE_NAME = 'localai-v1';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.ico',
-  '/robots.txt',
-];
+const ASSETS_TO_CACHE = ['/', '/index.html', '/manifest.json', '/favicon.ico', '/robots.txt'];
 
 // Install event - cache assets
 self.addEventListener('install', (event) => {
@@ -27,11 +21,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      );
+      return Promise.all(cacheNames.filter((name) => name !== CACHE_NAME).map((name) => caches.delete(name)));
     })
   );
   self.clients.claim();
@@ -53,28 +43,30 @@ self.addEventListener('fetch', (event) => {
       }
 
       // Fetch from network and cache the response
-      return fetch(event.request).then((networkResponse) => {
-        // Don't cache non-successful responses
-        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+      return fetch(event.request)
+        .then((networkResponse) => {
+          // Don't cache non-successful responses
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
+          }
+
+          // Clone the response for caching
+          const responseToCache = networkResponse.clone();
+
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
+
           return networkResponse;
-        }
-
-        // Clone the response for caching
-        const responseToCache = networkResponse.clone();
-
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
+        })
+        .catch(() => {
+          // If both cache and network fail, return offline fallback
+          // You could create a custom offline page here
+          return new Response('Offline - Please check your connection', {
+            status: 503,
+            statusText: 'Service Unavailable',
+          });
         });
-
-        return networkResponse;
-      }).catch(() => {
-        // If both cache and network fail, return offline fallback
-        // You could create a custom offline page here
-        return new Response('Offline - Please check your connection', {
-          status: 503,
-          statusText: 'Service Unavailable',
-        });
-      });
     })
   );
 });

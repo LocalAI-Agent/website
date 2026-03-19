@@ -2,7 +2,6 @@
 import { Icon } from 'astro-icon/components';
 
 import Image from '~/components/common/Image.astro';
-import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 
 import { getPermalink } from '~/utils/permalinks';
@@ -18,93 +17,192 @@ export interface Props {
 const { post, url } = Astro.props;
 ---
 
-<section class="mx-auto">
-  <article class="relative">
-    <header>
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
-        <p class="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-          <span class="flex items-center gap-1">
-            <Icon name="tabler:clock" class="w-4 h-4" />
-            <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
-          </span>
-          {
-            post.author && (
-              <span class="flex items-center gap-1">
-                · <Icon name="tabler:user" class="w-4 h-4" />
-                <span>{post.author}</span>
-              </span>
-            )
-          }
+<style is:global>
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+</style>
+
+<section class="relative">
+  <!-- Hero Section for Blog Post -->
+  <div class="relative py-16 md:py-24 overflow-hidden bg-page dark:bg-dark" style="contain: layout style;">
+    <!-- Enhanced Background -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-ceramic via-white to-ceramic dark:from-obsidian dark:via-gray-950 dark:to-obsidian animate-gradient-slow"
+      style="background-size: 200% 200%;"
+    >
+    </div>
+
+    <!-- Cyber glow lines -->
+    <div class="absolute inset-0 cyber-lines opacity-30 dark:opacity-60"></div>
+
+    <!-- Floating decorative orbs -->
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-klein/20 to-electric-cyan/20 rounded-full blur-3xl animate-float"
+    >
+    </div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-klein/20 rounded-full blur-3xl animate-float-delayed"
+    >
+    </div>
+
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <article class="relative max-w-4xl mx-auto" style="contain: layout;">
+        <header>
+          <!-- Category label -->
           {
             post.category && (
-              <span>
-                ·{' '}
-                <a class="hover:text-primary transition-colors" href={getPermalink(post.category.slug, 'category')}>
+              <div class="mb-4">
+                <a
+                  class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-klein/10 dark:bg-electric-cyan/10 text-klein dark:text-electric-cyan border border-klein/20 dark:border-electric-cyan/20 hover:bg-klein/20 dark:hover:bg-electric-cyan/20 transition-colors"
+                  href={getPermalink(post.category.slug, 'category')}
+                  style="border-radius: 8px;"
+                >
                   {post.category.title}
                 </a>
-              </span>
+              </div>
             )
           }
+
+          <!-- Title -->
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tighter tracking-tight mb-6 text-charcoal dark:text-white"
+            style="letter-spacing: -0.022em;"
+          >
+            {post.title}
+          </h1>
+
+          <!-- Meta Information -->
+          <div class="flex flex-wrap items-center gap-3 mb-8 text-sm text-secondary dark:text-gray-400">
+            {
+              post.publishDate && (
+                <span class="flex items-center gap-1">
+                  <Icon name="tabler:clock" class="w-4 h-4" />
+                  <time datetime={String(post.publishDate)} class="font-medium">
+                    {getFormattedDate(post.publishDate)}
+                  </time>
+                </span>
+              )
+            }
+            {post.publishDate && post.author && <span class="text-border">•</span>}
+            {
+              post.author && (
+                <span class="flex items-center gap-1">
+                  <Icon name="tabler:user" class="w-4 h-4" />
+                  <span class="font-medium text-charcoal dark:text-white">{post.author}</span>
+                </span>
+              )
+            }
+            {(post.publishDate || post.author) && post.readingTime && <span class="text-border">•</span>}
+            {post.readingTime && <span class="font-medium">{post.readingTime} min read</span>}
+          </div>
+
+          <!-- Excerpt -->
           {
-            post.readingTime && (
-              <span>
-                · <span>{post.readingTime}</span> min read
-              </span>
+            post.excerpt && (
+              <p class="text-xl md:text-2xl text-secondary dark:text-gray-300 leading-relaxed mb-10 max-w-3xl">
+                {post.excerpt}
+              </p>
             )
           }
-        </p>
-      </div>
 
-      <h1
-        class="sr-only"
-        class:list={[
-          'px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading',
-        ]}
-      >
-        {post.title}
-      </h1>
-      <p
-        class="max-w-3xl mx-auto mt-4 mb-2 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify leading-relaxed"
-      >
-        {post.excerpt}
-      </p>
+          <!-- Featured Image -->
+          {
+            post.image ? (
+              <div class="group relative">
+                <div
+                  class="relative rounded-2xl overflow-hidden shadow-deep"
+                  style="aspect-ratio: 16/9; min-height: 400px; border-radius: 8px;"
+                >
+                  <div class="absolute inset-0 bg-gradient-to-br from-klein/10 to-electric-cyan/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                  <Image
+                    src={post.image}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    widths={[400, 900, 1200]}
+                    sizes="(max-width: 900px) 400px, 900px"
+                    alt={post?.excerpt || post.title}
+                    width={1200}
+                    height={675}
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                    aspectRatio="16/9"
+                    style="border-radius: 8px;"
+                  />
+                </div>
+              </div>
+            ) : (
+              <div class="border-t border-border" />
+            )
+          }
+        </header>
+      </article>
+    </div>
+  </div>
 
-      {
-        post.image ? (
-          <div class="group max-w-3xl mx-auto mt-2 px-4 sm:px-6">
-            <div class="relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/20">
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Image
-                src={post.image}
-                class="w-full bg-gray-400 dark:bg-slate-700"
-                widths={[400, 900]}
-                sizes="(max-width: 900px) 400px, 900px"
-                alt={post?.excerpt || ''}
-                width={900}
-                height={506}
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                aspectRatio="16/9"
-              />
-            </div>
-          </div>
-        ) : (
-          <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="border-t dark:border-slate-700" />
-          </div>
-        )
-      }
-    </header>
+  <!-- Blog Content Section -->
+  <div class="relative py-16 md:py-24 overflow-hidden bg-page dark:bg-dark noise-texture">
+    <!-- Enhanced Background -->
     <div
-      style="margin-top: 0;"
-      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:my-0 [&>:first-child]:mt-0 [&>h1:first-child]:mt-0 [&>h1:first-child]:mb-6"
+      class="absolute inset-0 bg-gradient-to-br from-ceramic/80 via-white/50 to-ceramic/80 dark:from-obsidian/80 dark:via-gray-950/50 dark:to-obsidian/80"
     >
-      <slot />
     </div>
-    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
-      <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+
+    <!-- Floating decorative elements -->
+    <div
+      class="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-klein/15 to-electric-cyan/15 rounded-full blur-xl animate-float"
+    >
     </div>
-  </article>
+    <div
+      class="absolute bottom-20 right-10 w-20 h-20 bg-gradient-to-tr from-purple-500/15 to-klein/15 rounded-full blur-xl animate-float-delayed"
+    >
+    </div>
+
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <article class="relative max-w-4xl mx-auto" style="contain: layout;">
+        <!-- Blog Content -->
+        <div class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert" style="margin-top: 0;">
+          <slot />
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="mx-auto px-6 sm:px-6 max-w-3xl mt-16 pt-8 border-t border-border">
+          <!-- Tags -->
+          {
+            post.tags && post.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-8">
+                {post.tags.map((tag) => (
+                  <span
+                    class="px-4 py-2 text-sm bg-klein/10 dark:bg-electric-cyan/10 text-klein dark:text-electric-cyan rounded-full border border-klein/20 dark:border-electric-cyan/20 hover:bg-klein/20 dark:hover:bg-electric-cyan/20 transition-colors cursor-pointer"
+                    style="border-radius: 8px;"
+                  >
+                    {tag.title}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+
+          <!-- Share section -->
+          <div class="flex items-center justify-between flex-col sm:flex-row gap-4">
+            <p class="text-sm text-secondary dark:text-gray-400 font-medium">Share this article</p>
+            <SocialShare url={url} text={post.title} class="align-middle" />
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
 </section>
