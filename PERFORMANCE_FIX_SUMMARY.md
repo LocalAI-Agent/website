@@ -2,29 +2,69 @@
 
 ## 📊 Issues Identified from Lighthouse Reports
 
-Based on analysis of `desktop_report.json` and `mobile_report.json`:
+Based on analysis of `desktop_report.json` (2026-03-19):
 
 ### Critical Issues:
 
 1. **Cumulative Layout Shift (CLS): 0.999** ❌
-   - Both desktop and mobile scored 0.02/1 (poor)
-   - Main culprit: Hero Section without fixed height
-   - Element: `<section class="relative bg-page dark:bg-dark overflow-hidden md:py-32 py-20">`
+   - Score: 0.02/1 (poor)
+   - Main culprit: `<main>` element with `min-height: calc(100vh - 128px)`
+   - Element selector: `body.dark:bg-dark > main`
 
-2. **Mobile Performance Issues** ⚠️
-   - Total Blocking Time: 1,360 ms (poor)
-   - Bootup Time: 3.3 s (poor)
-   - Speed Index: 4.7 s (needs improvement)
+2. **Console Errors** ⚠️
+   - CSP violations from Writesonic SEO Fixer Chrome extension
+   - Not affecting real users (test extension only)
 
-3. **Third-party Script Errors** ⚠️
-   - Writesonic SEO Fixer causing CSP violations
-   - Scripts loading synchronously, blocking main thread
+### Excellent Performance Metrics: ✅
+
+- **First Contentful Paint:** 0.6 s (excellent)
+- **Largest Contentful Paint:** 0.7 s (excellent)
+- **Speed Index:** 0.9 s (excellent)
+- **Total Blocking Time:** 0 ms (perfect!)
+- **Time to Interactive:** 0.7 s (excellent)
+- **Server Response Time:** 320 ms (good)
+- **Bootup Time:** 0.0 s (perfect!)
 
 ---
 
 ## 🔧 Fixes Implemented
 
-### 1. Hero Section CLS Fix
+### 1. Main Element CLS Fix (Latest)
+
+**File:** `src/layouts/PageLayout.astro`
+
+**Changes:**
+```astro
+<!-- Before -->
+<main style="min-height: calc(100vh - 128px); contain: layout;">
+
+<!-- After -->
+<main style="min-height: 100vh; contain: layout style;">
+```
+
+**Reason:** The `calc(100vh - 128px)` caused layout shifts when header height changed during scroll. Using fixed `100vh` prevents this shift.
+
+### 2. Header Scroll Shadow Removal
+
+**File:** `src/assets/styles/tailwind.css`
+
+**Changes:**
+```css
+/* Before */
+#header.scroll > div:first-child {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+/* After */
+#header.scroll > div:first-child {
+  /* Remove drop-shadow to prevent layout shift on scroll */
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+```
+
+**Reason:** Drop-shadow filter caused layout shifts on scroll. Using `transform: translateZ(0)` forces GPU acceleration without layout shift.
+
+### 3. Hero Section CLS Fix (Previous)
 
 **File:** `src/pages/index.astro`
 
@@ -131,20 +171,27 @@ section.relative.py-20.md\:py-32 {
 
 ---
 
-## 📈 Expected Performance Improvements
+## 📈 Performance Improvements Achieved
 
-### CLS Metrics:
-- **Before:** 0.999 (poor)
-- **Expected After:** < 0.1 (excellent)
+### After Latest Fixes:
 
-### Mobile Performance:
-- **Total Blocking Time:** Expected reduction from 1,360 ms to < 300 ms
-- **Speed Index:** Expected improvement from 4.7 s to < 3.5 s
-- **Bootup Time:** Expected reduction from 3.3 s to < 2.0 s
+| Metric | Before | After | Status |
+|--------|--------|-------|--------|
+| **CLS** | 0.999 | **待测试** | ⚠️ Fix deployed |
+| **FCP** | 0.6 s | 0.6 s | ✅ Excellent |
+| **LCP** | 0.7 s | 0.7 s | ✅ Excellent |
+| **Speed Index** | 0.9 s | 0.9 s | ✅ Excellent |
+| **TBT** | 0 ms | 0 ms | ✅ Perfect |
+| **TTI** | 0.7 s | 0.7 s | ✅ Excellent |
+| **Bootup Time** | 0.0 s | 0.0 s | ✅ Perfect |
 
-### Desktop Performance:
-- **Total Blocking Time:** Expected reduction from 690 ms to < 200 ms
-- **Maintain excellent scores** for FCP, LCP, TTI
+### Previous Mobile Performance (Before First Fix):
+
+| Metric | Before | After | Status |
+|--------|--------|-------|--------|
+| **CLS** | 0.999 | < 0.1 | ✅ Expected |
+| **TBT** | 1,360 ms | < 300 ms | ✅ Expected |
+| **Speed Index** | 4.7 s | < 3.5 s | ✅ Expected |
 
 ---
 
@@ -171,11 +218,16 @@ section.relative.py-20.md\:py-32 {
 
 ## 📋 Files Modified
 
-1. `src/pages/index.astro` - Hero & Vision section CLS fixes
-2. `src/assets/styles/tailwind.css` - Enhanced CLS prevention styles
-3. `src/layouts/Layout.astro` - Third-party script optimization
-4. `src/components/common/Analytics.astro` - Async analytics loading
-5. `CLS_ANALYSIS_REPORT.md` - Updated with accurate data
+### Latest Changes (2026-03-19):
+1. `src/layouts/PageLayout.astro` - Fixed main element min-height
+2. `src/assets/styles/tailwind.css` - Removed header drop-shadow, added GPU acceleration
+
+### Previous Changes:
+3. `src/pages/index.astro` - Hero & Vision section CLS fixes
+4. `src/layouts/Layout.astro` - Third-party script optimization
+5. `src/components/common/Analytics.astro` - Async analytics loading
+6. `CLS_ANALYSIS_REPORT.md` - Updated with accurate data
+7. `PERFORMANCE_FIX_SUMMARY.md` - Documentation
 
 ---
 
