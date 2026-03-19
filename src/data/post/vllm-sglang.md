@@ -186,8 +186,8 @@ The **vLLM vs SGLang** decision ultimately depends on your specific workload. Fo
 
 ## Related Articles
 
-- [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Tool integration patterns for AI systems
-- [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
+- [MCP vs Function Calling: AI Tool Integration Guide](https://localaiagent.tech/blog/mcp-fuction-call) — Tool integration patterns for AI systems
+- [How to Build Local AI Agents: A Privacy-First Guide](https://localaiagent.tech/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
 - [vLLM Official Documentation](https://docs.vllm.ai/) — Complete vLLM setup guide
 - [SGLang GitHub Repository](https://github.com/sgl-project/sglang) — Official SGLang implementation
 - [PagedAttention Paper](https://arxiv.org/abs/2309.10380) — Technical foundation of vLLM
