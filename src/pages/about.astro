@@ -37,38 +37,49 @@ const metadata = {
   <!-- Hero Section ******************* -->
 
   <section class="relative py-20 md:py-32 overflow-hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Enhanced Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-cyan-50/50 to-blue-50/80 dark:from-blue-950/80 dark:via-cyan-950/50 dark:to-blue-950/80 animate-gradient-slow" style="background-size: 200% 200%;"></div>
+    
+    <!-- Floating decorative orbs -->
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-blue-400/20 rounded-full blur-3xl animate-float-delayed"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Left: Content -->
         <div class="text-center lg:text-left">
           <h1
-            class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient"
+            class="text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg"
+            style="background-size: 200% 200%;"
           >
             About LocalAI Agent
           </h1>
-          <p class="text-lg text-gray-600 dark:text-gray-300">
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
             We help businesses deploy AI on their own infrastructure. Our solution combines optimized hardware, local AI
             models, and intelligent agents.
           </p>
-          <p class="text-lg text-gray-600 dark:text-gray-300 mt-6 font-semibold">
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mt-6 font-semibold leading-relaxed">
             You keep full control over your data. Your AI systems stay secure and private.
           </p>
         </div>
 
         <!-- Right: Image -->
-        <div class="relative px-4">
-          <Image
-            src={heroImage}
-            alt="A high-performance, compact enterprise edge server rack inside a modern, secure server room."
-            class="rounded-lg shadow-2xl w-full h-auto"
-            width={1920}
-            height={1080}
-            sizes="100vw"
-            style={{ objectFit: 'cover', height: '500px' }}
-            fetchpriority="high"
-            loading="eager"
-          />
-          <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+        <div class="relative px-4 group">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/20">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Image
+              src={heroImage}
+              alt="A high-performance, compact enterprise edge server rack inside a modern, secure server room."
+              class="w-full h-auto"
+              width={1920}
+              height={1080}
+              sizes="100vw"
+              style={{ objectFit: 'cover', height: '500px' }}
+              fetchpriority="high"
+              loading="eager"
+            />
+          </div>
+          <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
             LocalAI Agent — High-performance enterprise edge infrastructure
           </p>
         </div>
@@ -79,12 +90,23 @@ const metadata = {
   <!-- Our Vision Section ************ -->
 
   <section class="relative py-16 md:py-24 overflow-hidden">
-    <!-- Background Image -->
+    <!-- Enhanced Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-blue-50/50 dark:from-blue-950/50 dark:via-cyan-950/30 dark:to-blue-950/50"></div>
+    
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px); background-size: 60px 60px;"></div>
+    
+    <!-- Floating decorative elements -->
+    <div class="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-20 h-20 bg-gradient-to-tr from-purple-400/15 to-blue-400/15 rounded-full blur-xl animate-float-delayed"></div>
+    
+    <!-- Background Image with enhanced overlay -->
     <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white/80 dark:from-blue-950/80 dark:via-blue-950/50 dark:to-blue-950/80"></div>
       <Image
         src={fortressImage}
         alt="A 3D isometric visualization of a secure, private digital vault protecting a network of AI data nodes."
-        class="w-full h-full object-cover opacity-40 dark:opacity-50"
+        class="w-full h-full object-cover opacity-30 dark:opacity-40"
         width={1920}
         height={1080}
         sizes="100vw"
@@ -95,15 +117,16 @@ const metadata = {
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto text-center" style="margin-top: -120px;">
         <h2
-          class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent"
+          class="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg"
+          style="background-size: 200% 200%;"
         >
           Our Vision
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-8 font-medium">
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 text-center mb-8 font-medium leading-relaxed">
           The future of enterprise AI is local, secure, and controllable.
         </p>
-        <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 bg-card/60 backdrop-blur-sm p-8 rounded-2xl">
-          <p>Cloud AI services are powerful. But many organizations need more control over:</p>
+        <div class="space-y-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-xl border border-white/20 dark:border-gray-700/30">
+          <p class="leading-relaxed">Cloud AI services are powerful. But many organizations need more control over:</p>
         </div>
 
         <div class="mt-12 grid md:grid-cols-2 gap-6">
@@ -119,71 +142,78 @@ const metadata = {
 
   <!-- What We Do Section ************ -->
 
-  <section class="py-16 md:py-24 bg-card glass-card">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative py-16 md:py-24 overflow-hidden">
+    <!-- Enhanced Background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-transparent dark:via-blue-950/20"></div>
+    <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]" style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px); background-size: 80px 80px;"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">What We Do</h2>
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg" style="background-size: 200% 200%;">What We Do</h2>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
           <!-- 3. Workflow Image: Beside What We Do Text -->
-          <div>
-            <Image
-              src={workflowImage}
-              alt="A professional engineer working on a high-tech dashboard displaying autonomous AI agent workflows."
-              class="rounded-lg shadow-xl w-full"
-              width={1920}
-              height={1080}
-              sizes="100vw"
-              style={{ objectFit: 'cover', height: '500px' }}
-            />
+          <div class="group order-2 lg:order-1">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/20">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <Image
+                src={workflowImage}
+                alt="A professional engineer working on a high-tech dashboard displaying autonomous AI agent workflows."
+                class="w-full"
+                width={1920}
+                height={1080}
+                sizes="100vw"
+                style={{ objectFit: 'cover', height: '500px' }}
+              />
+            </div>
             <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
               LocalAI Agent — Enterprise AI agent workflow management
             </p>
           </div>
 
           <!-- Text Content -->
-          <div class="space-y-6">
-            <p class="text-lg text-gray-600 dark:text-gray-300">
+          <div class="space-y-6 order-1 lg:order-2">
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
               LocalAI Agent provides a complete stack for enterprise local AI deployment.
             </p>
 
             <div class="space-y-4">
-              <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="group flex items-start space-x-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold mb-1">Local AI Infrastructure</h3>
+                  <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Local AI Infrastructure</h3>
                   <p class="text-gray-600 dark:text-gray-300">
                     We provide optimized hardware for running AI models on-premise.
                   </p>
                 </div>
               </div>
 
-              <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="group flex items-start space-x-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold mb-1">Local AI Model Deployment</h3>
+                  <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Local AI Model Deployment</h3>
                   <p class="text-gray-600 dark:text-gray-300">
                     We deploy AI models on your infrastructure. Your operations stay secure and reliable.
                   </p>
                 </div>
               </div>
 
-              <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="group flex items-start space-x-4 p-4 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold mb-1">Enterprise AI Agents</h3>
+                  <h3 class="text-lg font-semibold mb-1 text-gray-900 dark:text-white">Enterprise AI Agents</h3>
                   <p class="text-gray-600 dark:text-gray-300">
                     Our agents automate business workflows. They run locally without cloud services.
                   </p>
@@ -198,19 +228,27 @@ const metadata = {
 
   <!-- Why Local AI Section ********** -->
 
-  <section class="py-16 md:py-24 bg-alt">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative py-16 md:py-24 overflow-hidden">
+    <!-- Enhanced Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-blue-50/50 dark:from-blue-950/50 dark:via-cyan-950/30 dark:to-blue-950/50"></div>
+    <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]" style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px); background-size: 60px 60px;"></div>
+    
+    <!-- Floating decorative elements -->
+    <div class="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-xl animate-float"></div>
+    <div class="absolute bottom-40 left-20 w-20 h-20 bg-gradient-to-tr from-purple-400/15 to-blue-400/15 rounded-full blur-xl animate-float-delayed"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text">Why Local AI</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg" style="background-size: 200% 200%;">Why Local AI</h2>
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 text-center mb-12 leading-relaxed">
           Running AI locally provides critical advantages for enterprises:
         </p>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="glass-card rounded-xl p-6 holo-card">
+          <div class="group glass-card rounded-2xl p-6 holo-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -219,17 +257,17 @@ const metadata = {
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold">Data Privacy</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Data Privacy</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 ml-16">
+            <p class="text-gray-600 dark:text-gray-300 ml-20 leading-relaxed">
               Sensitive business data stays within your organization.
             </p>
           </div>
 
-          <div class="glass-card rounded-xl p-6 holo-card">
+          <div class="group glass-card rounded-2xl p-6 holo-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -238,30 +276,30 @@ const metadata = {
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold">Security</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Security</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 ml-16">AI systems run inside your own infrastructure.</p>
+            <p class="text-gray-600 dark:text-gray-300 ml-20 leading-relaxed">AI systems run inside your own infrastructure.</p>
           </div>
 
-          <div class="glass-card rounded-xl p-6 holo-card">
+          <div class="group glass-card rounded-2xl p-6 holo-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"
                   ></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold">Low Latency</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Low Latency</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 ml-16">
+            <p class="text-gray-600 dark:text-gray-300 ml-20 leading-relaxed">
               Local inference provides faster responses and more reliable performance.
             </p>
           </div>
 
-          <div class="glass-card rounded-xl p-6 holo-card">
+          <div class="group glass-card rounded-2xl p-6 holo-card hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -275,9 +313,9 @@ const metadata = {
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold">Full Control</h3>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Full Control</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 ml-16">
+            <p class="text-gray-600 dark:text-gray-300 ml-20 leading-relaxed">
               Organizations maintain full control over their AI stack and deployment.
             </p>
           </div>
