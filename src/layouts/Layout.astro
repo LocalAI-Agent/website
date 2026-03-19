@@ -44,10 +44,9 @@ const { language, textDirection } = I18N;
     <style>
       /* Critical CSS for above-the-fold content with CLS prevention */
       html {
-        font-family: Inter, system-ui, sans-serif;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 16px;
         line-height: 1.6;
-        font-display: swap;
       }
       body {
         margin: 0;
@@ -75,6 +74,11 @@ const { language, textDirection } = I18N;
       /* Prevent layout shift for sections */
       section[style*='min-height'] {
         contain: layout style;
+      }
+      /* Prevent CLS from font loading - use system fonts as fallback */
+      h1, h2, h3, h4, h5, h6, .font-bold {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size-adjust: 0.5; /* Helps maintain consistent text sizing */
       }
     </style>
 
