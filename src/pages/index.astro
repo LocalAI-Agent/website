@@ -85,45 +85,50 @@ const faqs = [
     class="relative py-20 md:py-32 overflow-hidden bg-page dark:bg-dark"
     style="min-height: 800px; contain: layout style;"
   >
-    <!-- Enhanced Background -->
+    <!-- Enhanced Background - Ceramic White to White gradient -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-cyan-50/50 to-blue-50/80 dark:from-blue-950/80 dark:via-cyan-950/50 dark:to-blue-950/80 animate-gradient-slow"
+      class="absolute inset-0 bg-gradient-to-br from-ceramic via-white to-ceramic dark:from-obsidian dark:via-gray-950 dark:to-obsidian animate-gradient-slow"
       style="background-size: 200% 200%;"
     >
     </div>
 
-    <!-- Decorative floating orbs -->
+    <!-- Cyber glow lines - Dark mode data flow -->
+    <div class="absolute inset-0 cyber-lines opacity-30 dark:opacity-60"></div>
+
+    <!-- Decorative floating orbs with fresnel effect -->
     <div
-      class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float"
+      class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-klein/20 to-electric-cyan/20 rounded-full blur-3xl animate-float fresnel-light"
     >
     </div>
     <div
-      class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-blue-400/20 rounded-full blur-3xl animate-float-delayed"
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-klein/20 rounded-full blur-3xl animate-float-delayed fresnel-light"
     >
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center grid-gutter">
         <!-- Left: Content -->
         <div class="text-center lg:text-left" style="contain: layout;">
-          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase mb-4 animate-fade">
+          <p class="text-base text-klein dark:text-electric-cyan font-bold tracking-widest uppercase mb-4 animate-fade">
             Currently building. Early access coming soon.
           </p>
           <h1
-            class="text-5xl md:text-7xl font-bold leading-tighter tracking-tighter mb-6 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg"
-            style="background-size: 200% 200%; text-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);"
+            class="text-5xl md:text-7xl font-bold leading-tighter tracking-tight mb-6 text-charcoal dark:text-white"
+            style="letter-spacing: -0.022em;"
           >
             LocalAI Agent
           </h1>
           <p
-            class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            class="text-xl md:text-2xl text-secondary dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+            style="line-height: 1.5;"
           >
             Deploy local AI models and run enterprise-grade AI agents securely on your own infrastructure.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href={getPermalink('/contact')}
-              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5"
+              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-white bg-klein hover:bg-blue-700 transition-all duration-300 shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5"
+              style="border-radius: 8px;"
             >
               Join the Waitlist
               <svg
@@ -140,7 +145,8 @@ const faqs = [
               href="https://twitter.com/localai67177"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-primary bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-primary hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-charcoal dark:text-white bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-soft hover:shadow-md hover:-translate-y-0.5"
+              style="border-radius: 8px;"
             >
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -152,25 +158,25 @@ const faqs = [
           </div>
         </div>
 
-        <!-- Right: Image -->
+        <!-- Right: Image with glassmorphism -->
         <div class="relative px-4" style="contain: layout;">
           <div
-            class="relative bg-gradient-to-br from-blue-100/50 to-cyan-100/50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg"
-            style="aspect-ratio: 16/9; min-height: 400px; contain: layout;"
+            class="relative glass-card rounded-lg shadow-deep"
+            style="aspect-ratio: 16/9; min-height: 400px; contain: layout; border-radius: 8px;"
           >
             <Image
               src={edgeServerImage}
               alt="A high-performance compact edge AI server with glowing blue LED indicators, designed for secure local deployment of large language models in enterprise environments."
-              class="rounded-lg shadow-2xl w-full h-full object-cover"
+              class="rounded-lg w-full h-full object-cover"
               widths={[400, 600, 800]}
               fetchpriority="high"
               loading="eager"
               width={1376}
               height={768}
-              style="aspect-ratio: 16/9;"
+              style="aspect-ratio: 16/9; border-radius: 8px;"
             />
           </div>
-          <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-3">
+          <p class="text-center text-sm text-muted dark:text-gray-400 mt-3">
             LocalAI Agent — High-performance edge AI server for enterprise deployment
           </p>
         </div>
@@ -181,37 +187,37 @@ const faqs = [
   <!-- Vision Section **************** -->
 
   <section
-    class="relative py-16 md:py-24 overflow-hidden bg-page dark:bg-dark"
+    class="relative py-16 md:py-24 overflow-hidden bg-page dark:bg-dark noise-texture"
     style="min-height: 500px; contain: layout style;"
   >
-    <!-- Enhanced Background -->
+    <!-- Enhanced Background - Ceramic gradient -->
     <div
-      class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-blue-50/50 dark:from-blue-950/50 dark:via-cyan-950/30 dark:to-blue-950/50"
+      class="absolute inset-0 bg-gradient-to-br from-ceramic/80 via-white/50 to-ceramic/80 dark:from-obsidian/80 dark:via-gray-950/50 dark:to-obsidian/80"
     >
     </div>
 
     <!-- Grid pattern overlay -->
     <div
       class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
-      style="background-image: linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px); background-size: 60px 60px;"
+      style="background-image: linear-gradient(#007AFF 1px, transparent 1px), linear-gradient(90deg, #007AFF 1px, transparent 1px); background-size: 60px 60px;"
     >
     </div>
 
-    <!-- Floating decorative elements -->
+    <!-- Floating decorative elements with neon glow -->
     <div
-      class="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-blue-400/15 to-cyan-400/15 rounded-full blur-xl animate-float"
+      class="absolute top-20 left-10 w-16 h-16 bg-gradient-to-br from-klein/15 to-electric-cyan/15 rounded-full blur-xl animate-float neon-glow"
     >
     </div>
     <div
-      class="absolute bottom-20 right-10 w-20 h-20 bg-gradient-to-tr from-purple-400/15 to-blue-400/15 rounded-full blur-xl animate-float-delayed"
+      class="absolute bottom-20 right-10 w-20 h-20 bg-gradient-to-tr from-purple-500/15 to-klein/15 rounded-full blur-xl animate-float-delayed neon-glow-blue"
     >
     </div>
 
     <!-- Background Image with placeholder -->
     <div class="absolute inset-0 pointer-events-none" style="min-height: 500px; contain: layout;">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-dark z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-ceramic dark:to-obsidian z-10"></div>
       <div
-        class="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 dark:from-blue-900/10 dark:to-cyan-900/10"
+        class="absolute inset-0 bg-gradient-to-br from-ceramic/50 to-white/50 dark:from-obsidian/10 dark:to-gray-900/10"
       >
       </div>
       <Image
@@ -227,21 +233,22 @@ const faqs = [
       />
     </div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
       <div class="max-w-4xl mx-auto text-center">
         <h2
-          class="text-3xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow drop-shadow-lg"
-          style="background-size: 200% 200%;"
+          class="text-3xl md:text-5xl font-bold mb-8 text-charcoal dark:text-white"
+          style="letter-spacing: -0.022em;"
         >
           The Future of Enterprise AI is Local
         </h2>
         <div
-          class="space-y-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-xl border border-white/20 dark:border-gray-700/30"
+          class="space-y-6 text-lg md:text-xl text-secondary dark:text-gray-300 glass-card p-8 md:p-10 rounded-3xl shadow-deep border border-border"
+          style="line-height: 1.5; border-radius: 8px;"
         >
-          <p class="leading-relaxed">
+          <p>
             Cloud AI is powerful, but enterprises need more control over their data and infrastructure.
           </p>
-          <p class="leading-relaxed">
+          <p>
             LocalAI Agent empowers businesses to deploy AI models locally and run enterprise-grade AI agents for secure,
             private, and efficient workflows.
           </p>
@@ -277,33 +284,36 @@ const faqs = [
 
   <!-- Why Local AI ****************** -->
 
-  <section class="relative py-16 md:py-24 bg-page dark:bg-dark overflow-hidden">
-    <!-- Enhanced background -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-transparent dark:via-blue-950/20">
+  <section class="relative py-16 md:py-24 bg-page dark:bg-dark overflow-hidden noise-texture">
+    <!-- Enhanced background with cyber lines -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ceramic/30 to-transparent dark:via-obsidian/20">
     </div>
+    <div class="absolute inset-0 cyber-lines opacity-20 dark:opacity-40"></div>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2
-            class="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent animate-gradient-slow"
-            style="background-size: 200% 200%;"
+            class="text-3xl md:text-5xl font-bold mb-4 text-charcoal dark:text-white"
+            style="letter-spacing: -0.022em;"
           >
             Why Local AI?
           </h2>
-          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300">
+          <p class="text-lg md:text-xl text-secondary dark:text-gray-300">
             Take control of your AI infrastructure and data
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="grid lg:grid-cols-2 gap-12 items-center grid-gutter">
           <!-- Left: Benefits List -->
           <div class="space-y-6">
             <div
-              class="group flex items-start space-x-4 p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-gray-800/80"
+              class="group flex items-start space-x-4 p-6 rounded-2xl glass-card border border-border shadow-soft hover:shadow-deep transition-all duration-300 hover:-translate-y-1"
+              style="border-radius: 8px;"
             >
               <div
-                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-klein to-electric-cyan flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                style="border-radius: 50%;"
               >
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -315,16 +325,18 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Data Privacy & Security</h3>
-                <p class="text-gray-600 dark:text-gray-300">Keep sensitive enterprise data inside your organization.</p>
+                <h3 class="text-xl font-semibold mb-2 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Data Privacy & Security</h3>
+                <p class="text-secondary dark:text-gray-300">Keep sensitive enterprise data inside your organization.</p>
               </div>
             </div>
 
             <div
-              class="group flex items-start space-x-4 p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-gray-800/80"
+              class="group flex items-start space-x-4 p-6 rounded-2xl glass-card border border-border shadow-soft hover:shadow-deep transition-all duration-300 hover:-translate-y-1"
+              style="border-radius: 8px;"
             >
               <div
-                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-klein to-electric-cyan flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                style="border-radius: 50%;"
               >
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"
@@ -332,16 +344,18 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Low Latency</h3>
-                <p class="text-gray-600 dark:text-gray-300">Immediate AI responses without cloud dependency.</p>
+                <h3 class="text-xl font-semibold mb-2 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Low Latency</h3>
+                <p class="text-secondary dark:text-gray-300">Immediate AI responses without cloud dependency.</p>
               </div>
             </div>
 
             <div
-              class="group flex items-start space-x-4 p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-gray-800/80"
+              class="group flex items-start space-x-4 p-6 rounded-2xl glass-card border border-border shadow-soft hover:shadow-deep transition-all duration-300 hover:-translate-y-1"
+              style="border-radius: 8px;"
             >
               <div
-                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-klein to-electric-cyan flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                style="border-radius: 50%;"
               >
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -358,16 +372,18 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Full Infrastructure Control</h3>
-                <p class="text-gray-600 dark:text-gray-300">Customize your AI environment for your business.</p>
+                <h3 class="text-xl font-semibold mb-2 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Full Infrastructure Control</h3>
+                <p class="text-secondary dark:text-gray-300">Customize your AI environment for your business.</p>
               </div>
             </div>
 
             <div
-              class="group flex items-start space-x-4 p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/80 dark:hover:bg-gray-800/80"
+              class="group flex items-start space-x-4 p-6 rounded-2xl glass-card border border-border shadow-soft hover:shadow-deep transition-all duration-300 hover:-translate-y-1"
+              style="border-radius: 8px;"
             >
               <div
-                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                class="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-klein to-electric-cyan flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                style="border-radius: 50%;"
               >
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -379,26 +395,26 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">No Cloud Dependency</h3>
-                <p class="text-gray-600 dark:text-gray-300">Reduce costs and risks of cloud-based AI.</p>
+                <h3 class="text-xl font-semibold mb-2 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">No Cloud Dependency</h3>
+                <p class="text-secondary dark:text-gray-300">Reduce costs and risks of cloud-based AI.</p>
               </div>
             </div>
           </div>
 
-          <!-- Right: Comparison Image -->
+          <!-- Right: Comparison Image with glassmorphism -->
           <div class="relative px-4">
             <div
-              class="relative bg-gradient-to-br from-blue-100/50 to-cyan-100/50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg"
-              style="aspect-ratio: 4/3; min-height: 300px;"
+              class="relative glass-card rounded-lg shadow-deep"
+              style="aspect-ratio: 4/3; min-height: 300px; border-radius: 8px;"
             >
               <Image
                 src={latencyImage}
                 alt="A conceptual speed comparison diagram showing the ultra-low latency of local AI model inference versus the high-latency path of cloud-based AI processing."
-                class="rounded-lg shadow-xl w-full h-full object-cover"
+                class="rounded-lg w-full h-full object-cover"
                 widths={[400, 600, 800]}
                 width={800}
                 height={600}
-                style="aspect-ratio: 4/3;"
+                style="aspect-ratio: 4/3; border-radius: 8px;"
                 loading="lazy"
               />
             </div>
@@ -410,54 +426,54 @@ const faqs = [
 
   <!-- Detailed FAQ Section ********** -->
 
-  <section class="py-16 md:py-24 bg-alt">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-16 md:py-24 bg-alt noise-texture">
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Frequently Asked Questions</h2>
+        <p class="text-lg text-secondary dark:text-gray-300 mb-12 text-center">
           Get answers to common questions about LocalAI Agent and local AI deployment.
         </p>
 
         <div class="space-y-6">
-          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What is LocalAI Agent?</h3>
-            <p class="text-gray-600 dark:text-gray-300">
+          <div class="glass-card dark:bg-card-dark rounded-xl p-6 shadow-soft" style="border-radius: 8px;">
+            <h3 class="text-xl font-semibold mb-3 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">What is LocalAI Agent?</h3>
+            <p class="text-secondary dark:text-gray-300">
               LocalAI Agent is an enterprise solution that helps organizations deploy AI models locally and run
               enterprise-grade AI agents on their own infrastructure, ensuring data privacy, security, and low-latency
               inference.
             </p>
           </div>
 
-          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Why deploy AI models locally?</h3>
-            <p class="text-gray-600 dark:text-gray-300">
+          <div class="glass-card dark:bg-card-dark rounded-xl p-6 shadow-soft" style="border-radius: 8px;">
+            <h3 class="text-xl font-semibold mb-3 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Why deploy AI models locally?</h3>
+            <p class="text-secondary dark:text-gray-300">
               Local AI deployment provides complete data privacy, reduced latency, lower costs, and full control over
               your AI infrastructure. It eliminates dependency on cloud providers and keeps sensitive enterprise data
               within your organization.
             </p>
           </div>
 
-          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What AI models are supported?</h3>
-            <p class="text-gray-600 dark:text-gray-300">
+          <div class="glass-card dark:bg-card-dark rounded-xl p-6 shadow-soft" style="border-radius: 8px;">
+            <h3 class="text-xl font-semibold mb-3 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">What AI models are supported?</h3>
+            <p class="text-secondary dark:text-gray-300">
               LocalAI Agent supports open-source LLMs including Llama, Mistral, Falcon, and other transformer-based
               models. Our platform is model-agnostic and optimized for enterprise deployment.
             </p>
           </div>
 
-          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+          <div class="glass-card dark:bg-card-dark rounded-xl p-6 shadow-soft" style="border-radius: 8px;">
+            <h3 class="text-xl font-semibold mb-3 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">
               What are the hardware requirements?
             </h3>
-            <p class="text-gray-600 dark:text-gray-300">
+            <p class="text-secondary dark:text-gray-300">
               For 7B models, you need 8GB VRAM. For 14B models, plan for 12-16GB VRAM. NVIDIA GPUs (RTX 3090/4090 or
               A100) are recommended for best performance.
             </p>
           </div>
 
-          <div class="bg-card dark:bg-card-dark rounded-xl p-6 shadow-sm">
-            <h3 class="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How is data security ensured?</h3>
-            <p class="text-gray-600 dark:text-gray-300">
+          <div class="glass-card dark:bg-card-dark rounded-xl p-6 shadow-soft" style="border-radius: 8px;">
+            <h3 class="text-xl font-semibold mb-3 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">How is data security ensured?</h3>
+            <p class="text-secondary dark:text-gray-300">
               All AI processing happens on your infrastructure. Your data never leaves your network, ensuring compliance
               with GDPR, HIPAA, and SOC 2.
             </p>
@@ -469,11 +485,11 @@ const faqs = [
 
   <!-- Stay Connected Section ******* -->
 
-  <section class="py-16 md:py-24 bg-page dark:bg-dark">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-16 md:py-24 bg-page dark:bg-dark noise-texture">
+    <div class="container-max mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Connected</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">Stay Connected</h2>
+        <p class="text-lg text-secondary dark:text-gray-300 mb-10">
           Follow us on GitHub and Twitter to track our progress. Join our community soon on Discord and Reddit.
         </p>
         <div class="flex justify-center items-center space-x-6">
@@ -481,7 +497,7 @@ const faqs = [
             href="https://github.com/LocalAI-Agent"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+            class="text-secondary dark:text-gray-300 hover:text-klein dark:hover:text-electric-cyan nav-hover-neon transition-colors"
             aria-label="GitHub"
           >
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -495,7 +511,7 @@ const faqs = [
             href="https://twitter.com/localai67177"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-colors"
+            class="text-secondary dark:text-gray-300 hover:text-klein dark:hover:text-electric-cyan nav-hover-neon transition-colors"
             aria-label="Twitter"
           >
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -504,7 +520,7 @@ const faqs = [
               ></path>
             </svg>
           </a>
-          <span class="text-gray-400 dark:text-gray-500" title="Coming soon" aria-label="Discord - Coming soon">
+          <span class="text-muted dark:text-gray-500" title="Coming soon" aria-label="Discord - Coming soon">
             <svg class="w-8 h-8 opacity-50" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"

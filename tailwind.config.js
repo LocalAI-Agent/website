@@ -66,6 +66,20 @@ export default {
     'lg:py-12',
     'xl:px-10',
     '2xl:text-[20px]',
+    // New design system utilities
+    'glass',
+    'glass-card',
+    'shadow-soft',
+    'shadow-deep',
+    'cyber-border',
+    'holo-card',
+    'neon-glow',
+    'neon-glow-blue',
+    'btn-klein',
+    'container-max',
+    'grid-gutter',
+    'gradient-text-primary',
+    'nav-hover-neon',
   ],
   future: {
     hoverOnlyWhenSupported: true,
@@ -85,6 +99,18 @@ export default {
         'text-light': 'var(--aw-color-text-light)',
         'code-bg': 'var(--aw-color-code-bg)',
         border: 'var(--aw-color-border)',
+        // Klein Blue for CTAs
+        klein: '#007AFF',
+        // Electric Cyan for dark mode accents
+        'electric-cyan': '#00F2FE',
+        // Deep Blue gradient
+        'deep-blue': '#4FACFE',
+        // Ceramic White background
+        'ceramic': '#FAFAFA',
+        // Obsidian Black for dark mode
+        obsidian: '#050505',
+        // Deep Charcoal text
+        charcoal: '#1D1D1F',
       },
       fontFamily: {
         sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
@@ -115,11 +141,36 @@ export default {
       maxWidth: {
         'blog-content': '700px',
         'blog-prose': '4xl',
+        // Container max width - 1440px
+        container: '1440px',
       },
       spacing: {
         paragraph: '16px',
         heading: '24px',
         section: '48px',
+        // Grid gutter - 24px
+        gutter: '24px',
+      },
+      borderRadius: {
+        // CTA button radius - 8px
+        btn: '8px',
+      },
+      boxShadow: {
+        // Soft drop shadow - 20px blur
+        soft: '0 4px 20px rgba(0, 0, 0, 0.08)',
+        // Deep shadow for dark mode
+        deep: '0 8px 40px rgba(0, 0, 0, 0.12)',
+        // Neon glow
+        'neon-cyan': '0 0 10px rgba(0, 242, 254, 0.5), 0 0 20px rgba(0, 242, 254, 0.3), 0 0 30px rgba(0, 242, 254, 0.2)',
+        'neon-blue': '0 0 10px rgba(0, 122, 255, 0.5), 0 0 20px rgba(0, 122, 255, 0.3), 0 0 30px rgba(0, 122, 255, 0.2)',
+      },
+      letterSpacing: {
+        // Tight heading tracking - -0.022em
+        tight: '-0.022em',
+      },
+      lineHeight: {
+        // Body line height - 1.5
+        relaxed: '1.5',
       },
 
       animation: {
@@ -148,6 +199,11 @@ export default {
         shine: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        // Cyber flow animation for data lines
+        'cyber-flow': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         },
       },
     },
