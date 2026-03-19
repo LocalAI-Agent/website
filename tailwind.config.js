@@ -126,10 +126,10 @@ export default {
         fade: 'fadeInUp 1s both',
         'gradient-slow': 'gradient 15s ease infinite',
         'gradient-medium': 'gradient 8s ease infinite',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out 3s infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'shine': 'shine 3s ease-in-out infinite',
+        shine: 'shine 3s ease-in-out infinite',
       },
 
       keyframes: {

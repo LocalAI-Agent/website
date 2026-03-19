@@ -44,7 +44,14 @@ const { language, textDirection } = I18N;
     <style>
       /* Critical CSS for above-the-fold content with CLS prevention */
       html {
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
         font-size: 16px;
         line-height: 1.6;
         font-synthesis: none; /* Prevent browser from synthesizing bold/italic */
@@ -77,13 +84,27 @@ const { language, textDirection } = I18N;
         contain: layout style;
       }
       /* Prevent CLS from font loading - use system fonts as fallback with size-adjust */
-      h1, h2, h3, h4, h5, h6, .font-bold, .font-heading {
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .font-bold,
+      .font-heading {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
         font-size-adjust: 0.5; /* Helps maintain consistent x-height */
         font-synthesis: none; /* Prevent synthetic bold/italic */
       }
       /* Prevent CLS from animations - disable for critical above-fold content */
-      [data-animated="true"],
+      [data-animated='true'],
       .intersect-once,
       .intersect-quarter,
       .motion-safe\\:md\\:opacity-0 {
@@ -101,7 +122,8 @@ const { language, textDirection } = I18N;
         contain: layout style;
       }
       /* Ensure stable icon sizing */
-      svg[class*="w-"], svg[class*="h-"] {
+      svg[class*='w-'],
+      svg[class*='h-'] {
         display: inline-block;
         vertical-align: middle;
       }
