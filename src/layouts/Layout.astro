@@ -47,6 +47,7 @@ const { language, textDirection } = I18N;
         font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-size: 16px;
         line-height: 1.6;
+        font-synthesis: none; /* Prevent browser from synthesizing bold/italic */
       }
       body {
         margin: 0;
@@ -75,17 +76,20 @@ const { language, textDirection } = I18N;
       section[style*='min-height'] {
         contain: layout style;
       }
-      /* Prevent CLS from font loading - use system fonts as fallback */
-      h1, h2, h3, h4, h5, h6, .font-bold {
+      /* Prevent CLS from font loading - use system fonts as fallback with size-adjust */
+      h1, h2, h3, h4, h5, h6, .font-bold, .font-heading {
         font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size-adjust: 0.5; /* Helps maintain consistent text sizing */
+        font-size-adjust: 0.5; /* Helps maintain consistent x-height */
+        font-synthesis: none; /* Prevent synthetic bold/italic */
       }
-      /* Prevent CLS from animations - force GPU compositing */
+      /* Prevent CLS from animations - disable for critical above-fold content */
       [data-animated="true"],
-      .intersect-once {
-        will-change: transform, opacity;
-        transform: translateZ(0);
-        backface-visibility: hidden;
+      .intersect-once,
+      .intersect-quarter,
+      .motion-safe\\:md\\:opacity-0 {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
       }
       /* Stabilize main content area */
       main {
