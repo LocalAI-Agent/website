@@ -182,7 +182,7 @@ The **vLLM vs SGLang** decision ultimately depends on your specific workload. Fo
 
 **Q4. Which framework should I choose for structured output generation like JSON?** **SGLang** excels at structured output generation, producing 4,200 tokens per second with 99.8% validity when using **xGrammar**, compared to **vLLM**'s 820 tokens per second with 85% validity using **Guidance**. For tasks involving tool calling, code generation, and structured extraction, **SGLang** typically delivers 3-5x throughput improvements.
 
-## **Q5. How do the installation requirements differ between vLLM and SGLang?** **vLLM** requires Linux, Python 3.9-3.12, and GPUs with compute capability 7.0 or higher (V100, T4, A100, H100). Installation is straightforward via pip after creating a conda environment. **SGLang** has similar GPU requirements and can be installed with pip, but requires additional dependencies from flashinfer. Both frameworks offer Docker containers for simplified deployment with GPU passthrough support.
+**Q5. How do the installation requirements differ between vLLM and SGLang?** **vLLM** requires Linux, Python 3.9-3.12, and GPUs with compute capability 7.0 or higher (V100, T4, A100, H100). Installation is straightforward via pip after creating a conda environment. **SGLang** has similar GPU requirements and can be installed with pip, but requires additional dependencies from flashinfer. Both frameworks offer Docker containers for simplified deployment with GPU passthrough support.
 
 ## Related Articles
 

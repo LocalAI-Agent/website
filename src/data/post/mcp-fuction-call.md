@@ -171,11 +171,11 @@ The transition from manual **Function Calling** to the **Model Context Protocol*
 
 ## FAQ Section
 
-**Q1: Is MCP only for Anthropic models?**No. While Anthropic pioneered the protocol, it is an open standard. Community-driven adapters already exist for OpenAI, LangChain, and local runners like Ollama.
+**Q1: Is MCP only for Anthropic models?** No. While Anthropic pioneered the protocol, it is an open standard. Community-driven adapters already exist for OpenAI, LangChain, and local runners like Ollama.
 
-**Q2: How does MCP handle authentication?**MCP supports various transport layers. For local processes, it uses standard input/output. For remote connections, it supports SSE with standard Web Auth (JWT, API Keys) to ensure only authorized clients can access your tools.
+**Q2: How does MCP handle authentication?** MCP supports various transport layers. For local processes, it uses standard input/output. For remote connections, it supports SSE with standard Web Auth (JWT, API Keys) to ensure only authorized clients can access your tools.
 
-**Q3: Can I run MCP servers locally?**Absolutely. One of MCP's strengths is the **stdio** transport, which allows your AI client to spin up a local server as a subprocess, providing the lowest possible latency and maximum privacy.
+**Q3: Can I run MCP servers locally?** Absolutely. One of MCP's strengths is the **stdio** transport, which allows your AI client to spin up a local server as a subprocess, providing the lowest possible latency and maximum privacy.
 
 ---
 
