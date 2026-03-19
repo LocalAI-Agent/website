@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
+import ReadingProgress from './ReadingProgress.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
@@ -18,42 +19,48 @@ export interface Props {
 const { post, url } = Astro.props;
 ---
 
+<!-- Reading Progress Bar -->
+<ReadingProgress />
+
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
-  <article>
+  <article class="relative">
+    <!-- Enhanced Header with gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-blue-50/50 dark:from-blue-950/50 dark:via-cyan-950/30 dark:to-blue-950/50 rounded-3xl -z-10"></div>
+    
     <header
       class={post.image
         ? 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'
         : 'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade'}
     >
       <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
-        <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+        <p class="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+          <span class="flex items-center gap-1">
+            <Icon name="tabler:clock" class="w-4 h-4" />
+            <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
+          </span>
           {
             post.author && (
-              <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block">{post.author}</span>
-              </>
+              <span class="flex items-center gap-1">
+                · <Icon name="tabler:user" class="w-4 h-4" />
+                <span>{post.author}</span>
+              </span>
             )
           }
           {
             post.category && (
-              <>
-                {' '}
+              <span>
                 ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                <a class="hover:text-primary transition-colors" href={getPermalink(post.category.slug, 'category')}>
                   {post.category.title}
                 </a>
-              </>
+              </span>
             )
           }
           {
             post.readingTime && (
-              <>
-                &nbsp;· <span>{post.readingTime}</span> min read
-              </>
+              <span>
+                · <span>{post.readingTime}</span> min read
+              </span>
             )
           }
         </p>
@@ -68,26 +75,31 @@ const { post, url } = Astro.props;
         {post.title}
       </h1>
       <p
-        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
+        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify leading-relaxed"
       >
         {post.excerpt}
       </p>
 
       {
         post.image ? (
-          <Image
-            src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
-            widths={[400, 900]}
-            sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
-            width={900}
-            height={506}
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            aspectRatio="16/9"
-          />
+          <div class="group max-w-3xl mx-auto mb-6 px-4 sm:px-6">
+            <div class="relative rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-blue-500/20">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <Image
+                src={post.image}
+                class="w-full bg-gray-400 dark:bg-slate-700"
+                widths={[400, 900]}
+                sizes="(max-width: 900px) 400px, 900px"
+                alt={post?.excerpt || ''}
+                width={900}
+                height={506}
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                aspectRatio="16/9"
+              />
+            </div>
+          </div>
         ) : (
           <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <div class="border-t dark:border-slate-700" />

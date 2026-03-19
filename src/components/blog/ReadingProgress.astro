@@ -1,0 +1,54 @@
+---
+/**
+ * ReadingProgress - Reading progress bar component
+ * Shows reading progress as user scrolls through blog post
+ * Zero performance impact - uses CSS and minimal JS
+ */
+---
+
+<script>
+  // Reading progress bar logic
+  function updateProgress() {
+    const article = document.querySelector('article');
+    const progressBar = document.getElementById('reading-progress');
+    
+    if (!article || !progressBar) return;
+    
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollTop = window.scrollY;
+    
+    // Calculate progress
+    const start = articleTop - windowHeight;
+    const end = articleTop + articleHeight;
+    const progress = ((scrollTop - start) / (end - start)) * 100;
+    
+    // Update progress bar width (clamped between 0 and 100)
+    progressBar.style.width = `${Math.max(0, Math.min(100, progress))}%`;
+  }
+  
+  // Listen for scroll events (throttled)
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+  
+  // Initial update
+  updateProgress();
+</script>
+
+<!-- Progress bar container -->
+<div class="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200/50 dark:bg-gray-800/50 backdrop-blur-sm">
+  <div 
+    id="reading-progress"
+    class="h-full bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 transition-all duration-150 ease-out"
+    style="width: 0%;"
+  ></div>
+</div>
