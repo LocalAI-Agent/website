@@ -109,30 +109,30 @@ const faqs = [
       <div class="grid lg:grid-cols-2 gap-12 items-center grid-gutter">
         <!-- Left: Content -->
         <div class="text-center lg:text-left" style="contain: layout;">
-          <p class="text-base text-klein dark:text-electric-cyan font-bold tracking-widest uppercase mb-4 animate-fade">
+          <p class="text-sm sm:text-base text-klein dark:text-electric-cyan font-bold tracking-widest uppercase mb-4 animate-fade px-2">
             Currently building. Early access coming soon.
           </p>
           <h1
-            class="text-5xl md:text-7xl font-bold leading-tighter tracking-tight mb-6 text-charcoal dark:text-white"
-            style="letter-spacing: -0.022em;"
+            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tighter tracking-tight mb-6 text-charcoal dark:text-white px-2"
+            style="letter-spacing: -0.022em; word-wrap: break-word;"
           >
             LocalAI Agent
           </h1>
           <p
-            class="text-xl md:text-2xl text-secondary dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+            class="text-lg sm:text-xl md:text-2xl text-secondary dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 px-2"
             style="line-height: 1.5;"
           >
             Deploy local AI models and run enterprise-grade AI agents securely on your own infrastructure.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-2">
             <a
               href={getPermalink('/contact')}
-              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-white bg-klein hover:bg-blue-700 transition-all duration-300 shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5"
+              class="group inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold rounded-lg text-white bg-klein hover:bg-blue-700 transition-all duration-300 shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5 whitespace-normal"
               style="border-radius: 8px;"
             >
               Join the Waitlist
               <svg
-                class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -145,15 +145,15 @@ const faqs = [
               href="https://twitter.com/localai67177"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-charcoal dark:text-white bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-soft hover:shadow-md hover:-translate-y-0.5"
+              class="group inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-semibold rounded-lg text-charcoal dark:text-white bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-soft hover:shadow-md hover:-translate-y-0.5 whitespace-normal"
               style="border-radius: 8px;"
             >
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
                 ></path>
               </svg>
-              Follow Us
+              <span class="whitespace-nowrap">Follow Us</span>
             </a>
           </div>
         </div>

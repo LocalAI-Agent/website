@@ -33,7 +33,20 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+        },
+      },
+      filter: (page) => {
+        // Exclude 404 page from sitemap
+        return !page.endsWith('/404');
+      },
+    }),
     mdx(),
     icon({
       include: {
