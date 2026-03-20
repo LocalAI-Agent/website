@@ -29,10 +29,6 @@ metadata:
 
 # 5 Agent Design Patterns Every Developer Needs to Know in 2026
 
-Below is a rewritten version of the Key Takeaways section, reordered to match the sequence **ReAct → Plan‑and‑Execute → Multi‑Agent → Reflection → Tool Use** and drawing directly from the metrics and insights in the updated table.
-
----
-
 ## Key Takeaways
 
 Master these five essential AI agent design patterns to build successful enterprise applications as 40% of companies adopt AI agents by 2026.
@@ -47,9 +43,9 @@ The difference between successful and failed AI agent projects often comes down 
 
 ## Introduction
 
-By 2026, 40% of enterprise applications will incorporate AI agents, compared with less than 5% in 2025 [13]. Understanding agent design patterns is no longer optional for developers building the next generation of software.
+By 2026, 40% of enterprise applications will incorporate AI agents, compared with less than 5% in 2025. Understanding agent design patterns is no longer optional for developers building the next generation of software.
 
-The shift from traditional UI to AI-driven collaboration is reshaping how we architect intelligent systems [14]. However, over 40% of agentic AI projects could get canceled by 2027 due to high costs and complex scaling [15]. The difference between success and failure often comes down to choosing the right design pattern. In this article, we'll explore five essential ai agent design patterns, from autonomous ai agent design patterns like Reflection and Plan-Execute to multi-agent design patterns and llm agent design patterns with practical examples.
+The shift from traditional UI to AI-driven collaboration is reshaping how we architect intelligent systems. However, over 40% of agentic AI projects could get canceled by 2027 due to high costs and complex scaling. The difference between success and failure often comes down to choosing the right design pattern. In this article, we'll explore five essential ai agent design patterns, from autonomous ai agent design patterns like Reflection and Plan-Execute to multi-agent design patterns and llm agent design patterns with practical examples.
 
 ## Pattern 1: ReAct (The Reasoning-Action Loop AI Agent Design Pattern)
 
@@ -181,7 +177,7 @@ According to data, 62% of organizations are experimenting with AI agents, with r
 
 ### What is the Tool Use Pattern
 
-LLMs operate within the boundaries of their training data. Tool Use extends these boundaries by [connecting models to external functions](https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use/), APIs, databases, and services [8]. The pattern treats the LLM as a reasoning engine while external tools execute real-world actions [9]. Instead of hallucinating calculations or outdated information, agents call specialized tools for verified results.
+LLMs operate within the boundaries of their training data. Tool Use extends these boundaries by [connecting models to external functions](https://www.deeplearning.ai/the-batch/agentic-design-patterns-part-3-tool-use/), APIs, databases, and services. The pattern treats the LLM as a reasoning engine while external tools execute real-world actions. Instead of hallucinating calculations or outdated information, agents call specialized tools for verified results.
 
 ### How Tool Use Pattern Works
 
