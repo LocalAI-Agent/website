@@ -136,8 +136,8 @@ The prompt versus context versus harness debate isn't about choosing sides. Star
 
 ## Related Articles
 
-- [MCP vs Function Calling: AI Tool Integration Guide](https://privocto.com/blog/mcp-fuction-call) — Tool integration patterns for AI systems
-- [How to Build Local AI Agents: A Privacy-First Guide](https://privocto.com/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
-- [openclaw](https://privocto.com/blog/openclaw) — How openclaw works
-- [vLLm vs SGlang](https://privocto.com/blog/vllm-sglang) — vLLM vs SGLang: Enterprise LLM Inference Comparison
+- [MCP vs Function Calling: AI Tool Integration Guide](/blog/mcp-fuction-call) — Tool integration patterns for AI systems
+- [How to Build Local AI Agents: A Privacy-First Guide](/blog/build-local-ai-agents) — Deploy local inference with vLLM/SGLang
+- [openclaw](/blog/openclaw) — How openclaw works
+- [vLLm vs SGlang](/blog/vllm-sglang) — vLLM vs SGLang: Enterprise LLM Inference Comparison
 - [PagedAttention Paper](https://arxiv.org/abs/2309.10380) — Technical foundation of vLLM
