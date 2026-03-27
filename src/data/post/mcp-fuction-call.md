@@ -24,8 +24,6 @@ metadata:
     follow: true
 ---
 
-# MCP vs Function Calling: AI Tool Integration Guide
-
 ## Key Takeaways
 
 MCP (Model Context Protocol) is the new open standard for AI tool integration—essentially "USB-C for AI agents." It standardizes tool discovery, reduces integration maintenance by up to 60%, and works with OpenAI, Claude, and Llama.

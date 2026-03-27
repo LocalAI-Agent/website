@@ -27,8 +27,6 @@ metadata:
     follow: true
 ---
 
-# How Does OpenClaw Work? A Beginner's Guide
-
 OpenClaw is an autonomous AI agent that runs on your own hardware—Windows, Mac, or Linux. It connects to your messaging apps (WhatsApp, Telegram, Discord, Slack, Teams, iMessage, Signal) and actually does things: runs shell commands, manages files, controls browsers, and executes scripts. Not just text generation—actual work.
 
 Unlike cloud-based chatbots, OpenClaw keeps everything local. Your data, API keys, and what the agent does all stay on your machine. No third parties, no mysterious servers in who-knows-where.

@@ -27,8 +27,6 @@ metadata:
     follow: true
 ---
 
-# 5 Agent Design Patterns Every Developer Needs to Know in 2026
-
 ## Key Takeaways
 
 Master these five essential AI agent design patterns to build successful enterprise applications as 40% of companies adopt AI agents by 2026.

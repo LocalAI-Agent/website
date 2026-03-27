@@ -25,8 +25,6 @@ metadata:
     follow: true
 ---
 
-# How to Build Local AI Agents: A Step-by-Step Guide to Privacy-First Implementation
-
 ## Key Takeaways
 
 Here's what we'll cover: how to build AI agents that run entirely on your machine, keeping your data under your control.
