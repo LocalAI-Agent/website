@@ -131,8 +131,8 @@ const { post, url } = Astro.props;
                   <Image
                     src={post.image}
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    widths={[400, 900, 1200]}
-                    sizes="(max-width: 900px) 400px, 900px"
+                    widths={[400, 600, 900, 1200, 1600]}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 900px, 1200px"
                     alt={post?.excerpt || post.title}
                     width={1200}
                     height={675}

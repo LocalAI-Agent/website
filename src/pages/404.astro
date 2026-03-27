@@ -1,23 +1,116 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import { getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import { getHomePermalink, getBlogPermalink } from '~/utils/permalinks';
+import { Image } from 'astro:assets';
 
-const title = `Error 404`;
+const title = 'Page Not Found - PrivOcto';
+const description = 'The page you are looking for does not exist. Return to our homepage or explore our blog.';
+
+const metadata = {
+  title,
+  description,
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 ---
 
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h2 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">Error</span>
-          <span class="text-primary">404</span>
-        </h2>
-        <p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">
-          But dont worry, you can find plenty of other things on our homepage.
+<Layout metadata={metadata}>
+  <section class="relative py-20 md:py-32 overflow-hidden bg-page dark:bg-dark">
+    <!-- Background gradient -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-ceramic/50 via-white/30 to-ceramic/50 dark:from-obsidian/50 dark:via-gray-950/30 dark:to-obsidian/50"
+    >
+    </div>
+    
+    <!-- Decorative elements -->
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-klein/20 to-electric-cyan/20 rounded-full blur-3xl animate-float"
+    >
+    </div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-klein/20 rounded-full blur-3xl animate-float-delayed"
+    >
+    </div>
+
+    <div class="container-max mx-auto px-4 relative z-10">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Octopus-themed 404 illustration placeholder -->
+        <div class="mb-8">
+          <svg
+            class="w-32 h-32 mx-auto text-klein dark:text-electric-cyan"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+        </div>
+        
+        <h1 class="text-8xl md:text-9xl font-bold mb-4 text-charcoal dark:text-white" style="letter-spacing: -0.022em;">
+          404
+        </h1>
+        
+        <p class="text-2xl md:text-3xl font-semibold mb-4 text-charcoal dark:text-white">
+          Page not found
         </p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">Back to homepage</a>
+        
+        <p class="text-lg text-secondary dark:text-gray-300 mb-8 leading-relaxed">
+          Oops! It looks like you've ventured into uncharted waters. The page you're looking for doesn't exist or has been moved.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={getHomePermalink()}
+            class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-white bg-klein hover:bg-blue-700 transition-all duration-300 shadow-soft hover:shadow-neon-blue hover:-translate-y-0.5"
+            style="border-radius: 8px;"
+          >
+            <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Homepage
+          </a>
+          
+          <a
+            href={getBlogPermalink()}
+            class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-lg text-charcoal dark:text-white bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-border hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-soft hover:shadow-md hover:-translate-y-0.5"
+            style="border-radius: 8px;"
+          >
+            Explore Blog
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Quick links -->
+        <div class="mt-12 pt-8 border-t border-border">
+          <p class="text-sm text-muted dark:text-gray-400 mb-4">Or explore our popular sections:</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href={getHomePermalink()} class="text-klein dark:text-electric-cyan hover:underline text-sm font-medium">
+              Home
+            </a>
+            <span class="text-border">•</span>
+            <a href={getBlogPermalink()} class="text-klein dark:text-electric-cyan hover:underline text-sm font-medium">
+              Blog
+            </a>
+            <span class="text-border">•</span>
+            <a href="/about" class="text-klein dark:text-electric-cyan hover:underline text-sm font-medium">
+              About Us
+            </a>
+            <span class="text-border">•</span>
+            <a href="/contact" class="text-klein dark:text-electric-cyan hover:underline text-sm font-medium">
+              Contact
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
