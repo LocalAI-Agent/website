@@ -13,17 +13,17 @@ metadata:
     template: '%s'
   description: 'PrivOcto: Secure AI agents featuring a local de-identification layer. We protect enterprise data by scrubbing sensitive info locally before cloud processing, combining air-gapped privacy with cutting-edge LLM intelligence.'
   keywords:
-    - Privacy-Preserving AI Agent   
-    - Local De-identification Layer  
-    - Hybrid Private AI Architecture 
-    - Sensitive Data Scrubbing       
-    - PII Redaction for LLMs         
-    - Secure Cloud-Edge AI          
-    - Zero-Trust AI Integration      
-    - Privacy-First Prompt Engineering 
-    - Enterprise Data Sovereignty    
-    - Local LLM Pre-processing       
-    - Compliance-Ready AI Agents      
+    - Privacy-Preserving AI Agent
+    - Local De-identification Layer
+    - Hybrid Private AI Architecture
+    - Sensitive Data Scrubbing
+    - PII Redaction for LLMs
+    - Secure Cloud-Edge AI
+    - Zero-Trust AI Integration
+    - Privacy-First Prompt Engineering
+    - Enterprise Data Sovereignty
+    - Local LLM Pre-processing
+    - Compliance-Ready AI Agents
   robots:
     index: true
     follow: true

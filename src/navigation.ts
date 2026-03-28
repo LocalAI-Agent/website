@@ -67,7 +67,12 @@ export const footerData: FooterData = {
   socialLinks: [
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', text: 'GitHub', href: 'https://github.com/PrivOcto' },
     { ariaLabel: 'Twitter', icon: 'tabler:brand-x', text: 'Twitter', href: 'https://x.com/localai67177' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', text: 'LinkedIn', href: 'https://linkedin.com/company/privocto' },
+    {
+      ariaLabel: 'LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      text: 'LinkedIn',
+      href: 'https://linkedin.com/company/privocto',
+    },
   ],
   footNote: `
     <div class="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">

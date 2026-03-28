@@ -154,7 +154,12 @@ import { UI } from 'astrowind:config';
     document.querySelector('#header nav')?.classList.add('hidden');
   };
 
-  window.onload = onLoad;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onLoad);
+  } else {
+    onLoad();
+  }
+
   window.onpageshow = onPageShow;
 
   document.addEventListener('astro:after-swap', () => {

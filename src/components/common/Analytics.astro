@@ -13,7 +13,7 @@ import { ANALYTICS } from 'astrowind:config';
 }
 
 <!-- Load Vercel Analytics and Speed Insights asynchronously after page load -->
-<script defer>
+<script is:inline>
   // Load Vercel Analytics after a delay to prioritize LCP
   setTimeout(() => {
     const script = document.createElement('script');
